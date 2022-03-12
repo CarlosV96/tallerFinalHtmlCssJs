@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="css/styles.css" rel="stylesheet" />
+    <script src="js/archivo.js"></script>
+    <title>Referencia personal</title>
+  </head>
+  <body id="cuerpoPagina" class="fondo1" onload="acordeon()">
+    <header>
+      <img src="img/Foto.jpeg" alt="Imagen de Carlos Valencia." />
+      <h1>Referencia Personal</h1>
+    </header>
+
+    <nav id="navegacion" class="colorNav1">
+      <ul>
+        <li>
+          <a href="./index.html">Página principal</a>
+        </li>
+        <li>
+          <a href="./experiencia.html">Experiencia Laboral</a>
+        </li>
+        <li>
+          <a href="./referencia_personal.html">Referencias familiares</a>
+        </li>
+        <li>
+          <a href="./estudios.html">Estudios realizados</a>
+        </li>
+      </ul>
+    </nav>
+
+    <main>
+      <article>
+        <h2>Referencias personales</h2>
+
+        <br />
+        <h3 class="tituloAcordeon">Jader Caicedo</h3>
+        <div class="contenidoAcordeon1">
+          <p>
+            <b>Administrador de empresas</b><br />
+            Coordinador tecnológico en <i>Twl Group International S.A.S.</i
+            ><br />
+            Teléfono : 315 311 8632
+          </p>
+        </div>
+        <br />
+        <h3 class="tituloAcordeon">Alex Bacca</h3>
+        <div class="contenidoAcordeon1">
+          <p>
+            <b>Tecnólogo Mecatrónico</b> <br />
+            Auxiliar de planeación en <i>Hexion Química </i> <br />
+            Teléfono : 315 532 00 93
+          </p>
+        </div>
+        <br />
+        <h3 class="tituloAcordeon">Arturo Plaza</h3>
+        <div class="contenidoAcordeon1">
+          <p>
+            Gerente general <i>Master Seed</i> <br />
+            Teléfono : 314 677 78 46
+          </p>
+        </div>
+      </article>
+      <aside>
+        <a href="pdf/Hoja de vida Sofka.pdf" target="_blank">Descargar pdf de hoja de vida</a>
+        <h1>¿Deseas cambiar el color de presentación?</h1>
+        <select id="opcionesDeColor" class="selector" onchange="obtenerColor()">
+          <option value="rgb(245,245,220)">  Color original</option>
+          <option value="rgb(133, 79, 108)"> Color morado  </option>
+          <option value="rgb(95, 95, 131)">  Color azul    </option>
+          <option value="rgb(110, 92, 46)">  Color cafe    </option>
+        </select>
+      </aside>
+    </main>
+
+    <footer>
+      © Hecho por Carlos Valencia -
+      <a href="https://www.sofka.com.co/es/sofka-university/" target="_blank">
+        Sofka U
+      </a>
+      <br />
+      Número telefónico: 3185103136 <br />
+      Correo electrónico: caliche-9696@hotmail.com
+    </footer>
+  </body>
+</html>

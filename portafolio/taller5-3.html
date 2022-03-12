@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="css/styles.css" rel="stylesheet" />
+    <title>Taller 5</title>
+  </head>
+
+  <body>
+    <header>
+      <div id="redes">
+        <ul>
+          <li>
+            <a href="https://github.com/CarlosV96" target="_blank"
+              ><img src="descargas/github.webp" />
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://www.linkedin.com/in/carlosandresvalencia1996/"
+              target="_blank"
+              ><img src="descargas/Linkedin.png" />
+            </a>
+          </li>
+        </ul>
+      </div>
+      <p>Bienvenidos a mi portafolio</p>
+    </header>
+
+    <div id="menuPrincipal" class="centrar">
+      <a href="index.html"> VOLVER AL MENÚ PRINCIPAL.</a> <br />
+      <br />
+      <a href="semana2.html">IR A SEMANA 2</a> <br />
+      <br />
+    </div>
+
+    <article class="titulo">
+      <h1>Taller de funciones</h1>
+      <h4>PUNTO 3</h4>
+      <p>
+        3. Organizar todos los puntos del taller de arreglos en modo funciones.
+      </p>
+    </article>
+
+    <section>
+      <div class="puntos">
+        <p> 
+            1. Crear un vector de tipo Entero con 5 posiciones, llenarlo con información 
+            solicitada al usuario. Después de recoger toda la información, se requiere imprimir 
+            el índice de cada posición en el arreglo con su valor de la siguiente manera:<br><br>
+            [0] = 55 <br>
+            [1] = 99 <br>
+            [2] = 11 <br>
+            [3] = 56 <br>
+            [4] = 69 <br>
+            <br>
+        </p>
+        <pre>
+        SubProceso imprimirnum(num Por Referencia)
+            Definir indice Como Entero;
+            Para indice <- 0 hasta 4 Con Paso 1 Hacer
+                Escribir "[", indice ,"] = ", num[indice];
+            FinPara
+        FinSubProceso
+        SubProceso escribirnum(num Por Referencia)
+            num[0] <- capturarnum("Escriba un número");
+            num[1] <- capturarnum("Escriba un número");
+            num[2] <- capturarnum("Escriba un número");
+            num[3] <- capturarnum("Escriba un número");
+            num[4] <- capturarnum("Escriba un número");
+        FinSubProceso
+        SubProceso dato <- capturarnum(pregunta)
+            Definir dato Como entero;
+            Escribir pregunta;
+            Leer dato;
+        FinSubProceso
+        
+        Proceso Punto1
+            Definir num Como Entero;
+            Dimension num[5];
+            Escribirnum(num);
+            imprimirnum(num);
+        FinProceso
+        </pre>
+      </div>
+
+      <div class="puntos">
+      <p> 
+        2. Crear un arreglo de números enteros de 20 posiciones, el cual, debe ser llenado 
+        con números aleatorios entre 1 y 100; después de haber llenado dicho arreglo, se 
+        debe volver a recorrer utilizando un ciclo diferente al que se usó para llenarse e 
+        imprimir los números pares e impares. Ejemplo:<br>
+        Números pares: 2, 4, 6, 8, 10 <br>
+        Números impares: 1, 3, 5, 7, 9
+        <br>
+        <br>
+      </p>
+      <pre>
+    SubProceso escribirnumeros(nume)
+        Definir indice, i Como entero;
+        i <- 0;
+        indice <- 0;
+        
+        Repetir
+            nume[i] <- Aleatorio(1,100);
+            Escribir nume[i], " " Sin Saltar;
+            indice <- indice + 1;
+            i <- i + 1;
+        Hasta Que indice = 20
+        Escribir "";
+        i <- 0;
+        para i <- 0 Hasta 19 Con Paso 1 Hacer
+            Si nume[i]%2=0 Entonces
+                Escribir nume[i], " ",Sin Saltar;
+            FinSi
+        FinPara
+        Escribir "";
+        i <- 0;
+        para i <- 0 Hasta 19 Con Paso 1 Hacer
+            Si nume[i]%2=1 Entonces
+                Escribir nume[i], " ",Sin Saltar;
+            FinSi
+        FinPara
+    FinSubProceso
+    
+    Proceso Punto2
+        Definir nume Como Entero;
+        Dimension nume[20];
+    
+        escribirnumeros(nume);
+    
+    FinProceso
+      </pre>
+      </div>
+
+      <div class="puntos">
+        <p> 
+            3. Imprimir los números primos del 1 al 1000, el resultado debe ser buscado de forma matemática.<br>
+            <br>
+        </p>
+        <pre>
+        SubProceso imprimirnumeros(vector)
+            Definir a, b, num, contador Como Entero;
+            b <- 0;
+            para num <- 1 Hasta 1000 Con Paso 1 Hacer
+                a <- 1;
+                contador <- 0;
+                Mientras a <= num Hacer
+                    si num mod a = 0 Entonces
+                        contador <- contador + 1;
+                    FinSi
+                    a <- a + 1;
+                FinMientras
+                si contador = 2 Entonces
+                    vector(b) <- num;
+                    b <- b + 1;
+                FinSi
+            FinPara
+            para num <- 0 Hasta 167 Con Paso 1 Hacer
+                Escribir vector(num), " " Sin Saltar;
+            FinPara
+        FinSubProceso
+        
+        Proceso Punto3
+            Definir vector Como Entero;
+            Dimension vector[200];
+            
+            imprimirnumeros(vector);
+            Escribir "";
+        FinProceso
+        </pre>
+      </div>
+
+      <div class="puntos">
+        <p> 
+            4. Dada la siguiente matriz bidimensional, el cual debe de quemar en el código.<br>
+            01 02 03 04 05 <br>
+            06 07 08 09 10 <br>
+            11 12 13 14 15 <br>
+            16 17 18 19 20 <br> <br>
+            Utilizando el conocimiento adquirido, a excepción de hacerlo de forma manual, 
+            imprima la siguiente matriz bidimensional. <br>
+            01 02 03 04 05 <br>
+            10 09 08 07 06 <br>
+            11 12 13 14 15 <br>
+            20 19 18 17 16 <br>
+            <br>
+          </p>
+        <pre>
+            SubProceso imprimir(matriz)
+            Definir fila, columna Como Entero;
+            fila <- 0;
+                Para columna <- 0 Hasta 4 Con Paso 1 Hacer
+                    Escribir matriz[fila,columna], " " Sin Saltar;
+                FinPara
+                Escribir "";
+        FinSubProceso
+        SubProceso imprimir2(matriz)
+            Definir fila, columna Como Entero;
+            fila <- 1;
+                Para columna <- 4 Hasta 0 Con Paso -1 Hacer
+                    Escribir matriz[fila,columna], " " Sin Saltar;
+                FinPara
+                Escribir "";
+        FinSubProceso
+        SubProceso imprimir3(matriz)
+            Definir fila, columna Como Entero;
+            fila <- 2;
+                Para columna <- 0 Hasta 4 Con Paso 1 Hacer
+                    Escribir matriz[fila,columna], " " Sin Saltar;
+                FinPara
+                Escribir "";
+        FinSubProceso
+        SubProceso imprimir4(matriz)
+            Definir fila, columna Como Entero;
+            fila <- 3;
+                Para columna <- 4 Hasta 0 Con Paso -1 Hacer
+                    Escribir matriz[fila,columna], " " Sin Saltar;
+                FinPara
+        FinSubProceso
+        
+        Proceso punto4
+            Definir matriz Como Caracter;
+            Dimension matriz[4,5];
+        
+            matriz[0,0] <- "01";
+            matriz[0,1] <- "02";
+            matriz[0,2] <- "03";
+            matriz[0,3] <- "04";
+            matriz[0,4] <- "05";
+            
+            matriz[1,0] <- "06";
+            matriz[1,1] <- "07";
+            matriz[1,2] <- "08";
+            matriz[1,3] <- "09";
+            matriz[1,4] <- "10";
+            
+            matriz[2,0] <- "11";
+            matriz[2,1] <- "12";
+            matriz[2,2] <- "13";
+            matriz[2,3] <- "14";
+            matriz[2,4] <- "15";
+            
+            matriz[3,0] <- "16";
+            matriz[3,1] <- "17";
+            matriz[3,2] <- "18";
+            matriz[3,3] <- "19";
+            matriz[3,4] <- "20";
+            
+            imprimir(matriz);
+            imprimir2(matriz);
+            imprimir3(matriz);
+            imprimir4(matriz);
+            Escribir "";
+        FinProceso        
+        </pre>
+      </div>
+
+      <div class="puntos">
+        <p> 
+            5. Se debe de imprimir el siguiente cuadro: <br>
+            <img src="descargas/1644205032_14. taller.png" alt="punto cinco taller 4" class="imagen_grande">
+            <br>
+            El usuario deberá insertar la fila y columna de la cual desea ver el resultado, 
+            el resultado de cada celda debe estar previamente calculado en una matriz bidimensional
+             la cual cada resultado obedecerá a la fila y columna insertada por el usuario.
+             <br>
+             <br>
+          </p>
+        <pre>
+            SubProceso respuesta <- celda(num1, num2)
+            Escribir "         ", num2+1,"X", num1+1;
+        FinSubProceso
+        SubProceso respuesta <- multiplicacion(num1,num2)
+            Definir respuesta Como Entero;
+            respuesta <- (num1+1)*(num2+1);
+        FinSubProceso
+        
+        Proceso punto5
+            Definir a, fila, columna Como Entero;
+            a <- 1;
+            
+            Mientras a = 1 o a <= 10 Hacer
+                    Limpiar Pantalla;
+                    Escribir "                             COLUMNAS";
+                    Escribir "      0     1     2     3     4     5     6     7     8     9";
+                    Escribir "  0  1X1   2X1   3X1   4X1   5X1   6X1   7X1   8X1   9X1   10X1";
+                    Escribir "  1  1X2   2X2   3X2   4X2   5X2   6X2   7X2   8X2   9X2   10X2";
+                    Escribir "  2  1X3   2X3   3X3   4X3   5X3   6X3   7X3   8X3   9X3   10X3";
+                    Escribir "F 3  1X4   2X4   3X4   4X4   5X4   6X4   7X4   8X4   9X4   10X4";
+                    Escribir "I 4  1X5   2X5   3X5   4X5   5X5   6X5   7X5   8X5   9X5   10X5";
+                    Escribir "L 5  1X6   2X6   3X6   4X6   5X6   6X6   7X6   8X6   9X6   10X6";
+                    Escribir "A 6  1X7   2X7   3X7   4X7   5X7   6X7   7X7   8X7   9X7   10X7";
+                    Escribir "S 7  1X8   2X8   3X8   4X8   5X8   6X8   7X8   8X8   9X8   10X8";
+                    Escribir "  8  1X9   2X9   3X9   4X9   5X9   6X9   7X9   8X9   9X9   10X9";
+                    Escribir "  9  1X10  2X10  3X10  4X10  5X10  6X10  7X10  8X10  9X10  10X10";
+                Escribir "";
+                
+                Escribir "Ingresa la fila";
+                Leer fila;
+                
+                Escribir "Ingresa la columna";
+                Leer columna;
+                
+                Escribir "INFORMACIÓN DE LA CELDA";
+                Escribir celda(fila, columna);
+                Escribir "      RESULTADO";
+                Escribir "         ", multiplicacion(fila, columna);
+                
+                Escribir "Presiona 1 para escoger otro resultado o presiona 11 para salir";
+                Leer a;
+            FinMientras
+        FinProceso
+        </pre>
+      </div>
+
+    </section>
+
+    <footer>
+      © Hecho por Carlos Valencia para
+      <a href="https://www.sofka.com.co/es/sofka-university/" target="_blank"> Sofka U </a> <br>
+      Número telefónico: 3185103136 <br>
+      Correo electrónico: caliche-9696@hotmail.com
+  </footer>
+  
+  </body>
+</html>

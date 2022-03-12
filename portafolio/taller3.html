@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="css/styles.css" rel="stylesheet" />
+    <title>Taller 3</title>
+  </head>
+  <body>
+    <header>
+      <div id="redes">
+        <ul>
+          <li>
+            <a href="https://github.com/CarlosV96" target="_blank"
+              ><img src="descargas/github.webp" />
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://www.linkedin.com/in/carlosandresvalencia1996/"
+              target="_blank"
+              ><img src="descargas/Linkedin.png" />
+            </a>
+          </li>
+        </ul>
+      </div>
+      <p>Bienvenidos a mi portafolio</p>
+    </header>
+
+    <div id="menuPrincipal" class="centrar">
+      <a href="index.html"> VOLVER AL MENÚ PRINCIPAL.</a> <br />
+      <br />
+      <a href="semana1.html">IR A SEMANA 1</a> <br />
+      <br />
+    </div>
+
+    
+
+    <article class="titulo">
+      <h1>Taller de ciclos</h1>
+    </article>
+
+    <section>
+        <div class="puntos">
+            <h2>PUNTO1</h2>
+            <p> 
+              1. Realizar la siguiente figura por medio del ciclo <strong>Para</strong><br>
+              <img src="descargas/1643643915_01. Taller Ciclos.png" alt="imagen primer punto ciclos">
+              <br>
+              <br>
+            </p>
+          <pre>
+        Proceso miApp
+            Definir edad como entero;
+            
+            Escribir "¿Cuál es tu edad?";
+            Leer edad;
+            
+            si edad >= 18 Entonces
+                Escribir "Usted es mayor de edad";
+            FinSi
+        FinProceso
+            </pre>
+        </div>
+
+        <div class="puntos">
+            <h2>PUNTO2</h2>
+            <p> 
+              2. Realizar la siguiente figura por medio del ciclo <strong> Mientras - Hacer </strong><br>
+              <img src="descargas/1643644021_02. Taller Ciclos.png" alt="imagen segundo punto ciclos">
+              <br>
+              <br>
+            </p>
+          <pre>
+        Proceso Punto2
+            Definir a Como Entero;
+            
+            a <- 1;
+            
+            Mientras a = 1 Hacer
+                Escribir "         *";
+                a <- a + 1;
+            FinMientras
+            
+            Mientras a = 2 Hacer
+                Escribir "        **";
+                a <- a + 1;
+            FinMientras
+            
+            Mientras a = 3 Hacer
+                Escribir "       ***";
+                a <- a + 1;
+            FinMientras
+            
+            Mientras a = 4 Hacer
+                Escribir "      ****";
+                a <- a + 1;
+            FinMientras
+            
+            Mientras a = 5 Hacer
+                Escribir "     *****";
+                a <- a + 1;
+            FinMientras
+            
+            Mientras a = 6 Hacer
+                Escribir "    ******";
+                a <- a + 1;
+            FinMientras
+            
+            Mientras a = 7 Hacer
+                Escribir "   *******";
+                a <- a + 1;
+            FinMientras
+            
+            Mientras a = 8 Hacer
+                Escribir "  ********";
+                a <- a + 1;
+            FinMientras
+            
+            Mientras a = 9 Hacer
+                Escribir " *********";
+                a <- a + 1;
+            FinMientras
+            
+            Mientras a = 10 Hacer
+                Escribir "**********";
+                a <- a + 1;
+            FinMientras
+            
+        FinProceso
+        
+            </pre>
+        </div>
+
+        <div class="puntos">
+            <h2>PUNTO3</h2>
+            <p> 
+              3. Realizar la siguiente figura por medio del ciclo <strong>Repetir - Hasta Que</strong><br>
+              <img src="descargas/1643644087_03. Taller Ciclos.png" alt="imagen tercer punto ciclos">
+              <br>
+              <br>
+            </p>
+          <pre>
+        Proceso Punto3
+            Definir i, j, a, b, fila Como entero;
+            
+            i <- 1;
+            b <- 2;
+            fila <- 1;
+            
+            Repetir
+                
+                j <- 0;
+                
+                Si fila = 1 Entonces
+                    fila <- fila + 1;
+                    Repetir
+                        j <- j +1;
+                        
+                        si (j<= (20/2) - i + 1) o (j >= (20/2)+ i +1) Entonces //SI J <= 10 Ó J >= 10 ESCRIBE ESPACIO
+                            Escribir " " Sin Saltar;
+                        FinSi
+                        si (j > (20/2) - i + 1) y (j < (20/2) + i + 1) Entonces //SI J = 11 ESCRIBE *
+                            Escribir "*" Sin Saltar;
+                        FinSi
+                        Si j=21 Entonces
+                            Escribir " ";
+                        FinSi
+                    Hasta Que j = 21
+                    
+                FinSi
+                
+                Si fila = 2 Entonces
+                    j <- 0;
+                    fila <- fila +1;
+                    Repetir
+                        j <- j +1;
+                        
+                        si (j<= (20/2) - i) o (j >= (20/2)+ i +1) Entonces //SI J <= 10 Ó J >= 10 ESCRIBE ESPACIO
+                            Escribir " " Sin Saltar;
+                        FinSi
+                        si (j > (20/2) - i + 1) y (j < (20/2) + i + 1) Entonces //SI J = 11 ESCRIBE *
+                            Escribir "***" Sin Saltar;
+                        FinSi
+                        Si j=21 Entonces
+                            Escribir " ";
+                        FinSi
+                    Hasta Que j = 21
+                FinSi
+                
+                Si fila = 3 Entonces
+                    j <- 0;
+                    fila <- fila +1;
+                    Repetir
+                        j <- j +1;
+                        
+                        si (j<= (20/2) - 2*i) o (j >= (20/2)+ i +1) Entonces //SI J <= 10 Ó J >= 10 ESCRIBE ESPACIO
+                            Escribir " " Sin Saltar;
+                        FinSi
+                        si (j > (20/2) - i + 1) y (j < (20/2) + i + 1) Entonces //SI J = 11 ESCRIBE *
+                            Escribir "*****" Sin Saltar;
+                        FinSi
+                        Si j=21 Entonces
+                            Escribir " ";
+                        FinSi
+                    Hasta Que j = 21
+                    
+                FinSi
+                
+                Si fila = 4 Entonces
+                    j <- 0;
+                    fila <- fila +1;
+                    Repetir
+                        j <- j +1;
+                        
+                        si (j<= (20/2) - 2*i - i) o (j >= (20/2)+ i +1) Entonces //SI J <= 10 Ó J >= 10 ESCRIBE ESPACIO
+                            Escribir " " Sin Saltar;
+                        FinSi
+                        si (j > (20/2) - i + 1) y (j < (20/2) + i + 1) Entonces //SI J = 11 ESCRIBE *
+                            Escribir "*******" Sin Saltar;
+                        FinSi
+                        Si j=21 Entonces
+                            Escribir " ";
+                        FinSi
+                    Hasta Que j = 21
+                    
+                FinSi
+                
+                Si fila = 4 Entonces
+                    j <- 0;
+                    fila <- fila +1;
+                    Repetir
+                        j <- j +1;
+                        
+                        si (j<= (20/2) - 2*i - 2*i) o (j >= (20/2)+ i +1) Entonces 
+                            Escribir " " Sin Saltar;
+                        FinSi
+                        si (j > (20/2) - i + 1) y (j < (20/2) + i + 1) Entonces //SI J = 11 ESCRIBE *
+                            Escribir "*********" Sin Saltar;
+                        FinSi
+                        Si j=21 Entonces
+                            Escribir " ";
+                        FinSi
+                    Hasta Que j = 21
+                    
+                FinSi
+                
+                Si fila = 5 Entonces
+                    j <- 0;
+                    fila <- fila +1;
+                    Repetir
+                        j <- j +1;
+                        
+                        si (j<= (20/2) - 4*i) o (j >= (20/2)+ i +1) Entonces //SI J <= 10 Ó J >= 10 ESCRIBE ESPACIO
+                            Escribir " " Sin Saltar;
+                        FinSi
+                        si (j > (20/2) - i + 1) y (j < (20/2) + i + 1) Entonces //SI J = 11 ESCRIBE *
+                            Escribir "*********" Sin Saltar;
+                        FinSi
+                        Si j=21 Entonces
+                            Escribir " ";
+                        FinSi
+                    Hasta Que j = 21
+                    
+                FinSi
+                
+                Si fila = 6 Entonces
+                    j <- 0;
+                    fila <- fila +1;
+                    Repetir
+                        j <- j +1;
+                        
+                        si (j<= (20/2) - 4*i - i) o (j >= (20/2)+ i +1) Entonces //SI J <= 10 Ó J >= 10 ESCRIBE ESPACIO
+                            Escribir " " Sin Saltar;
+                        FinSi
+                        si (j > (20/2) - i + 1) y (j < (20/2) + i + 1) Entonces //SI J = 11 ESCRIBE *
+                            Escribir "***********" Sin Saltar;
+                        FinSi
+                        Si j=21 Entonces
+                            Escribir " ";
+                        FinSi
+                    Hasta Que j = 21
+                    
+                FinSi
+                
+                Si fila = 7 Entonces
+                    j <- 0;
+                    fila <- fila +1;
+                    Repetir
+                        j <- j +1;
+                        
+                        si (j<= (20/2) - 5*i - i) o (j >= (20/2)+ i +1) Entonces //SI J <= 10 Ó J >= 10 ESCRIBE ESPACIO
+                            Escribir " " Sin Saltar;
+                        FinSi
+                        si (j > (20/2) - i + 1) y (j < (20/2) + i + 1) Entonces //SI J = 11 ESCRIBE *
+                            Escribir "*************" Sin Saltar;
+                        FinSi
+                        Si j=21 Entonces
+                            Escribir " ";
+                        FinSi
+                    Hasta Que j = 21
+                    
+                FinSi
+                
+                Si fila = 8 Entonces
+                    j <- 0;
+                    fila <- fila +1;
+                    Repetir
+                        j <- j +1;
+                        
+                        si (j<= (20/2) - 6*i - i) o (j >= (20/2)+ i +1) Entonces //SI J <= 10 Ó J >= 10 ESCRIBE ESPACIO
+                            Escribir " " Sin Saltar;
+                        FinSi
+                        si (j > (20/2) - i + 1) y (j < (20/2) + i + 1) Entonces //SI J = 11 ESCRIBE *
+                            Escribir "***************" Sin Saltar;
+                        FinSi
+                        Si j=21 Entonces
+                            Escribir " ";
+                        FinSi
+                    Hasta Que j = 21
+                    
+                FinSi
+                
+                Si fila = 9 Entonces
+                    j <- 0;
+                    fila <- fila +1;
+                    Repetir
+                        j <- j +1;
+                        
+                        si (j<= (20/2) - 7*i - i) o (j >= (20/2)+ i +1) Entonces //SI J <= 10 Ó J >= 10 ESCRIBE ESPACIO
+                            Escribir " " Sin Saltar;
+                        FinSi
+                        si (j > (20/2) - i + 1) y (j < (20/2) + i + 1) Entonces //SI J = 11 ESCRIBE *
+                            Escribir "*****************" Sin Saltar;
+                        FinSi
+                        Si j=21 Entonces
+                            Escribir " ";
+                        FinSi
+                    Hasta Que j = 21
+                    
+                FinSi
+                
+                Si fila = 10 Entonces
+                    j <- 0;
+                    fila <- fila +1;
+                    Repetir
+                        j <- j +1;
+                        
+                        si (j<= (20/2) - 8*i - i) o (j >= (20/2)+ i +1) Entonces //SI J <= 10 Ó J >= 10 ESCRIBE ESPACIO
+                            Escribir " " Sin Saltar;
+                        FinSi
+                        si (j > (20/2) - i + 1) y (j < (20/2) + i + 1) Entonces //SI J = 11 ESCRIBE *
+                            Escribir "*******************" Sin Saltar;
+                        FinSi
+                        Si j=21 Entonces
+                            Escribir " ";
+                        FinSi
+                    Hasta Que j = 21
+                    
+                FinSi
+                
+                
+                Si fila = 11 Entonces
+                    j <- 0;
+                    fila <- fila +1;
+                    Repetir
+                        j <- j +1;
+                        
+                        si (j<= (20/2) - 9*i - i) o (j >= (20/2)+ i +1) Entonces //SI J <= 10 Ó J >= 10 ESCRIBE ESPACIO
+                            Escribir " " Sin Saltar;
+                        FinSi
+                        si (j > (20/2) - i + 1) y (j < (20/2) + i + 1) Entonces //SI J = 11 ESCRIBE *
+                            Escribir "*********************" Sin Saltar;
+                        FinSi
+                        Si j=21 Entonces
+                            Escribir " ";
+                        FinSi
+                    Hasta Que j = 21
+                    
+                FinSi
+                
+                Si fila = 12 Entonces
+                    j <- 0;
+                    fila <- fila +1;
+                    Repetir
+                        j <- j +1;
+                        
+                        si (j<= (20/2) - i) o (j >= (20/2)+ i +1) Entonces //SI J <= 10 Ó J >= 10 ESCRIBE ESPACIO
+                            Escribir " " Sin Saltar;
+                        FinSi
+                        si (j > (20/2) - i + 1) y (j < (20/2) + i + 1) Entonces //SI J = 11 ESCRIBE *
+                            Escribir "***" Sin Saltar;
+                        FinSi
+                        Si j=21 Entonces
+                            Escribir " ";
+                        FinSi
+                    Hasta Que j = 21
+                    
+                FinSi
+                
+                Si fila = 13 Entonces
+                    j <- 0;
+                    fila <- fila + 1;
+                    Repetir
+                        j <- j +1;
+                        
+                        si (j<= (20/2) - i) o (j >= (20/2)+ i +1) Entonces //SI J <= 10 Ó J >= 10 ESCRIBE ESPACIO
+                            Escribir " " Sin Saltar;
+                        FinSi
+                        si (j > (20/2) - i + 1) y (j < (20/2) + i + 1) Entonces //SI J = 11 ESCRIBE *
+                            Escribir "***" Sin Saltar;
+                        FinSi
+                        Si j=21 Entonces
+                            Escribir " ";
+                        FinSi
+                    Hasta Que j = 21
+                    
+                FinSi
+                
+                Si fila = 14 Entonces
+                    j <- 0;
+                    fila <- fila +1;
+                    Repetir
+                        j <- j +1;
+                        
+                        si (j<= (20/2) - 2*i) o (j >= (20/2)+ i +1) Entonces //SI J <= 10 Ó J >= 10 ESCRIBE ESPACIO
+                            Escribir " " Sin Saltar;
+                        FinSi
+                        si (j > (20/2) - i + 1) y (j < (20/2) + i + 1) Entonces //SI J = 11 ESCRIBE *
+                            Escribir "*****" Sin Saltar;
+                        FinSi
+                        Si j=21 Entonces
+                            Escribir " ";
+                        FinSi
+                    Hasta Que j = 21
+                    
+                FinSi
+                
+                Si fila = 15 Entonces
+                    j <- 0;
+                    fila <- fila +1;
+                Repetir
+                        j <- j +1;
+                        
+                    si (j<= (20/2) - 2*i - 2*i) o (j >= (20/2)+ i +1) Entonces 
+                            Escribir " " Sin Saltar;
+                    FinSi
+                    si (j > (20/2) - i + 1) y (j < (20/2) + i + 1) Entonces //SI J = 11 ESCRIBE *
+                            Escribir "*********" Sin Saltar;
+                    FinSi
+                    Si j=21 Entonces
+                            Escribir " ";
+                    FinSi
+                Hasta Que j = 21
+                    
+                FinSi
+                
+                
+                
+            Hasta Que j = 21
+                
+            
+        FinProceso
+            </pre>
+        </div>
+
+        <div class="puntos">
+            <h2>PUNTO4</h2>
+            <p> 
+              4. Se requiere un programa que pueda crear la tabla de multiplicar del número
+               que el usuario indique por medio del ciclo <strong>Para</strong>; esta debe ser impresa del 1 al 10. 
+               Ejemplo, si el usuario indica que desea crear la tabla del 5, entonces el resultado 
+               debería ser el siguiente:<br>
+              <img src="descargas/1643644382_04. Taller Ciclos.png" alt="imagen cuarto punto ciclos">
+              <br>
+              <br>
+            </p>
+          <pre>
+        Proceso Punto4
+            Definir a, b Como Entero;
+            
+            Escribir "Escribe el número que desees
+            multiplicar";
+            Leer a;
+            
+            
+            Para b <- 1 Hasta 10 Con Paso 1 Hacer
+                Escribir b, " X ", a, " = ", b*a;
+            FinPara
+            
+        FinProceso
+            </pre>
+        </div>
+
+        <div class="puntos">
+            <h2>PUNTO5</h2>
+            <p> 
+              5. Utilizando el ciclo que usted desee, crear un menú de ejecución infinita 
+              hasta que el usuario desee terminar dicho ciclo.<br>
+              <img src="descargas/1643644509_05. Taller Ciclos.png" alt="imagen cinco punto ciclos">
+              <br>
+              <br>
+            </p>
+          <pre>
+        Proceso Punto5
+            Definir a Como Entero;
+            Definir nombre Como Caracter;
+            Definir nombrecapturado Como Logico;
+            
+            nombrecapturado <- falso;
+            
+            repetir 
+                Escribir "Menú de usuario";
+                Escribir "1. Captura nombre.";
+                Escribir "2. Saludar Persona.";
+                Escribir "3. Salir del sistema.";
+                Leer a;
+                
+                Si a = 1 Entonces
+                    Limpiar Pantalla;
+                    Escribir "Dime tu nombre";
+                    Leer nombre;
+                    nombrecapturado <- Verdadero;
+                FinSi
+                
+                Si a = 2 Entonces
+                    Limpiar Pantalla;
+                    Si nombrecapturado = Verdadero Entonces
+                        Escribir "Hola ", nombre;
+                    SiNo
+                        Escribir "Para saludarte primero 
+                        debes capturar tu nombre.";
+                    FinSi
+                FinSi
+            Hasta Que a = 3
+            Escribir "Vuelve pronto";
+            
+        FinProceso
+            </pre>
+        </div>
+    </section>
+
+    <div class="video">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/-_qu8ng8axM" 
+        title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; 
+        clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+
+    <div class="otrapagina">
+        <p>
+            debido a que algunos puntos son un poco largos <br>
+            se dividirá este taller en 2 páginas. <br> <br>
+        </p>
+        <a href="taller3-2.html"> <strong>IR A LA SIGUIENTE PÁGINA </strong></a>
+        <br>
+        <br>
+    </div>
+
+    <footer>
+        © Hecho por Carlos Valencia para
+        <a href="https://www.sofka.com.co/es/sofka-university/" target="_blank"> Sofka U </a> <br>
+        Número telefónico: 3185103136 <br>
+        Correo electrónico: caliche-9696@hotmail.com
+    </footer>
+
+  </body>
+</html>
+

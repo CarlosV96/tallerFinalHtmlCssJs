@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="css/styles.css" rel="stylesheet" />
+    <title>Taller 5</title>
+  </head>
+  
+<body>
+    <header>
+      <div id="redes">
+        <ul>
+          <li>
+            <a href="https://github.com/CarlosV96" target="_blank"
+              ><img src="descargas/github.webp" />
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://www.linkedin.com/in/carlosandresvalencia1996/"
+              target="_blank"
+              ><img src="descargas/Linkedin.png" />
+            </a>
+          </li>
+        </ul>
+      </div>
+      <p>Bienvenidos a mi portafolio</p>
+    </header>
+
+    <div id="menuPrincipal" class="centrar">
+        <a href="index.html"> VOLVER AL MENÚ PRINCIPAL.</a> <br> <br>
+        <a href="semana2.html">IR A SEMANA 2</a> <br> <br>
+      </div>
+
+      <article class="titulo">
+        <h1>Taller de funciones</h1>
+        <h4> PUNTO 2 </h4>
+      <p>
+          2.Organizar los puntos 6, 7 y 8 del taller de ciclos en modo funciones
+      </p>
+    </article>
+
+    <section>
+        <div class="puntos">
+            <p> 
+              6. Se está creando una aplicación que va a estar conectada con un prototipo que permita 
+              almacenar contactos telefónicos en el dispositivo. Para ello cada contacto debe contener 
+              nombre completo, teléfono y organización. Se requiere que la aplicación permita añadir 3 
+              contactos verificando que el número no esté almacenado, buscar contactos almacenados y 
+              eliminar contactos si el usuario lo requiere. Recuerde que el sistema debe terminar cuando 
+              el usuario así lo indique.<br>
+              <br>
+            </p>
+          <pre>
+        SubProceso imprimirDatos(contacto)
+            Escribir "        CONTACTO 1";
+            Escribir  "Nombre: ", contacto[0];
+            Escribir  "Telefono: ", contacto[1];
+            Escribir  "Compañia: ", contacto[2];
+        FinSubProceso
+        SubProceso imprimirDatos2(contacto2)
+            Escribir "        CONTACTO 2";
+            Escribir  "Nombre: ", contacto2[0];
+            Escribir  "Telefono: ", contacto2[1];
+            Escribir  "Compañia: ", contacto2[2];
+        FinSubProceso
+        SubProceso imprimirDatos3(contacto3)
+            Escribir "        CONTACTO 3";
+            Escribir  "Nombre: ", contacto3[0];
+            Escribir  "Telefono: ", contacto3[1];
+            Escribir  "Compañia: ", contacto3[2];
+        FinSubProceso
+        
+        SubProceso agregar1(contacto Por Referencia)
+            Limpiar Pantalla;
+            contacto[0] <- capturarDato("Escribe el nombre de la persona.");
+            contacto[1] <- capturarDato("Digita el número telefónico sin espacios, ni puntos.");	
+            contacto[2] <- capturarDato("Organización");	
+        FinSubProceso
+        SubProceso agregar2(contacto2 Por Referencia)
+            Limpiar Pantalla;
+            contacto2[0] <- capturarDato("Escribe el nombre de la persona.");
+            contacto2[1] <- capturarDato("Digita el número telefónico sin espacios, ni puntos.");	
+            contacto2[2] <- capturarDato("Organización");	
+        FinSubProceso
+        SubProceso agregar3(contacto3 Por Referencia)
+            Limpiar Pantalla;
+            contacto3[0] <- capturarDato("Escribe el nombre de la persona.");
+            contacto3[1] <- capturarDato("Digita el número telefónico sin espacios, ni puntos.");	
+            contacto3[2] <- capturarDato("Organización");	
+        FinSubProceso
+        
+        SubProceso dato <- capturarDato(pregunta)
+            Definir dato Como Caracter;
+            Escribir pregunta;
+            Leer dato;
+        FinSubProceso
+
+        Proceso Punto6
+            Definir a Como entero;
+            Definir una, otra2, otra3 Como Logico;
+            Definir contac1, contac2, contac3 Como Caracter;
+            Dimension contac1[3];
+            Dimension contac2[3];
+            Dimension contac3[3];
+            
+            una <- falso;
+            otra2 <- falso;
+            otra3 <- falso;
+            a <- 0;
+            
+            Repetir // Menú principal
+                Mientras a = 0 Hacer
+                Escribir "Menú de usuario";
+                Escribir "1. Añadir contacto 1.";
+                Escribir "2. Ver contactos almacenados";
+                Escribir "3. Eliminar contactos almacenados.";
+                Escribir "4. Salir del sistema.";
+                Leer a;
+                
+                Si a = 1 Entonces
+                    agregar1(contac1);
+                    una <- Verdadero;
+                    otra2 <- Verdadero;
+                    a <- 5;
+                FinSi
+                Si a = 2 y una = falso Entonces // Si presiona 2 y no he llenado campos me arroja el mensaje
+                    Limpiar Pantalla;
+                    Escribir "NO HAS GUARDADO NINGUN CONTACTO";
+                    Escribir " POR FAVOR INTENTA NUEVAMENTE";
+                    a <- 0;
+                FinSi
+                Si a = 2 y una = Verdadero y b = Falso Entonces // Si presionan 2 y ya llené campos me arroja el 
+                contacto
+                    imprimirDatos(contac1);
+                FinSi
+                Si a = 3 y una = falso Entonces // Si presiona 3 y no he llenado campos me arroja el mensaje
+                    Limpiar Pantalla;
+                    Escribir "NO HAS GUARDADO NINGUN CONTACTO";
+                    Escribir " POR FAVOR INTENTA NUEVAMENTE";
+                    a<-0;
+                FinSi
+                
+            FinMientras
+                
+                Mientras a = 5 Hacer // a ya me vale 5 cuando lleno 
+                    Repetir 
+                        otra2 <- falso;
+                        Escribir "Menú de usuario";
+                        Escribir "1. Añadir contacto 2.";
+                        Escribir "2. Ver contactos almacenados";
+                        Escribir "3. Eliminar contactos almacenados.";
+                        Escribir "4. Salir del sistema.";
+                        Leer a;
+                        
+                        Si a = 1 Entonces // Si le dan en 1 puedo ingresar los datos del contacto numero 2
+                            agregar2(contac2);
+                            otra2 <- Verdadero;
+                            a <- 6;
+                        FinSi
+                        
+                        Si a = 2 y otra2 = falso Entonces  //Si presionan el 2 sin haber llenado los datos del 
+                        contacto2 
+                            Limpiar Pantalla;
+                            imprimirDatos(contac1);
+                        FinSi
+                        
+                        Si a = 2 y otra3 = Verdadero Entonces//Mientras que si presionan el 2 pero ya llené los datos 
+                            imprimirDatos(contac1);
+                            imprimirDatos2(contac2);
+                            Limpiar Pantalla;
+                            a <- 0;
+                        FinSi
+                        
+                        Si a = 3 Entonces
+                            Limpiar Pantalla;
+                            Escribir "¿ELIMINAR CONTACTO 1 ?";
+                            imprimirDatos(contac1);
+                            Escribir "1. Para si.";
+                            Escribir "2. Para no.";
+                            Leer a;
+                            Si a = 1 Entonces
+                                a <- 0;
+                                una <- falso;
+                            FinSi
+                            Si a = 2 Entonces
+                                a <- 5;
+                            FinSi
+                        FinSi
+                        
+                    Hasta Que a = 6 o a = 4 o a = 0 
+                FinMientras 
+                
+                Mientras a = 6 Hacer //Solo cuando a valga 6 quiere decir que ya llené los campos
+                    Repetir 
+                        Escribir "Menú de usuario";
+                        Escribir "1. Añadir contacto 3.";
+                        Escribir "2. Ver contactos almacenados";
+                        Escribir "3. Eliminar contactos almacenados.";
+                        Escribir "4. Salir del sistema.";
+                        Leer a;
+                        
+                        Si a = 1 Entonces // Si le dan en 1 puedo ingresar los datos del contacto numero 2
+                            agregar3(contac3);
+                            otra3 <- Verdadero;
+                            a <- 7;
+                        FinSi
+                        
+                        Si a = 2 y otra3 = falso Entonces  //Si presionan el 2 sin haber llenado los datos
+                            Limpiar Pantalla;
+                            imprimirDatos(contac1);
+                            imprimirDatos2(contac2);
+                            a <- 6;
+                        FinSi
+            
+                        Si a = 3 Entonces
+                            Limpiar Pantalla;
+                            Escribir "¿ELIMINAR CONTACTO 2 ?";
+                            imprimirDatos2(contac2);
+                            Escribir "1. Para si.";
+                            Escribir "2. Para no.";
+                            Leer a;
+                            Si a = 1 Entonces
+                                a <- 5;
+                            FinSi
+                            Si a = 2 Entonces
+                                a <- 6;
+                            FinSi
+                        FinSi
+                    Hasta Que a = 4 o a = 5 o a = 7
+                    
+                    Mientras  a = 7 Hacer  
+                        Repetir
+                            Escribir "Almacenamiento lleno";
+                            Escribir "2. Ver contactos almacenados";
+                            Escribir "3. Eliminar contactos almacenados.";
+                            Escribir "4. Salir del sistema.";
+                            Leer a;
+                            
+                            Si a = 2 Entonces
+                                imprimirDatos(contac1);
+                                imprimirDatos2(contac2);
+                                imprimirDatos3(contac3);
+                            FinSi
+                            
+                            Si a = 3 Entonces
+                                Limpiar Pantalla;
+                                Escribir "¿ELIMINAR CONTACTO 3 ?";
+                                imprimirDatos3(contac3);
+                                Escribir "1. Para si.";
+                                Escribir "2. Para no.";
+                                Leer a;
+                                Si a = 1 Entonces
+                                    a <- 6;
+                                FinSi
+                                Si a = 2 Entonces
+                                    a <- 7;
+                                FinSi
+                            FinSi
+                        Hasta Que a = 4 o a = 6
+                    FinMientras
+                    
+                FinMientras
+            Hasta Que a = 4
+        FinProceso
+            </pre>
+        </div>
+
+        <div class="puntos">
+            <p> 
+              7. El parqueadero "El guardián" presta sus servicios de parqueadero nocturno para los 
+              usuarios del barrio y requiere una aplicación que permita registrar los vehículos que 
+              se cuidan en estas instalaciones. Se sugiere que el parqueadero tenga los atributos del
+               vehículo como son, placa y marca, y los datos del cliente como son nombre completo y 
+               número de teléfono. Para cada vehículo se debe permitir la opción de ingresar al 
+               parqueadero, retirar del parqueadero y consultar si un vehículo se encuentra en el 
+               parqueadero. Recuerde que el sistema debe terminar cuando el usuario así lo indique. 
+               Tenga en presente que el parqueadero solo puede almacenar máximo 5 vehículos.<br>
+              <br>
+            </p>
+          <pre>
+            SubProceso placa(a, b, c, d)
+            Definir e Como Entero;
+            Definir parqueado, retirar Como Logico;
+            parqueado <- Verdadero;
+            retirar <- Falso;
+            Repetir
+            
+            Escribir "Vehículo de placas ", a;
+            Escribir "Marca: ", b;
+            Escribir "Teléfono: ", d;
+            Escribir "Señor ", c, " Ingrese la opción que desee";
+            Escribir "1. Ingresar al parqueadero";
+            Escribir "2. Retirar del parqueadero";
+            Escribir "3. Consultar si esta en el parqueadero";
+            Escribir "4. Volver al menú anterior.";
+            Leer e;
+            //Todo lo relacionado con opción 1 (ingresar el vehículo) es de aquí para abajo.
+            Si e = 1 y parqueado = Verdadero y retirar = Falso Entonces
+                Limpiar Pantalla;
+                ingresado(c);
+            FinSi
+            Si e = 1 y parqueado = Falso y retirar = Verdadero Entonces
+                Limpiar Pantalla;
+                parqueado <- Verdadero; 
+                retirar <- Falso;
+                ingresarVehiculo(c);
+            FinSi
+            //Opción 2, Retirar del parqueadero, de acá para abajo.
+            Si e = 2 y retirar = Falso y parqueado = Verdadero Entonces
+                Limpiar Pantalla;
+                retirar <- Verdadero;
+                parqueado <- Falso;
+                retirarVehiculo(c);
+                e <- 0;
+            FinSi
+            Si e = 2 y retirar = Verdadero Entonces
+                Limpiar Pantalla;
+                parqueado <- falso;
+                vehiculoRetirado(c);
+            FinSi
+            //Opción 3 Consultar si el vehiculo está o no parqueado
+            Si e = 3 y parqueado = Verdadero y retirar = Falso Entonces
+                Limpiar Pantalla;
+                parqueadoSi(a);
+            FinSi
+            Si e = 3 y parqueado = Falso y retirar = Verdadero Entonces
+                Limpiar Pantalla;
+                parqueadoNo(a);
+            FinSi
+        Hasta Que e = 4 
+        FinSubProceso
+        SubProceso ingresado(a)
+            Escribir "Señor(a) ", a," su vehículo ya está en el parqueadero.";
+        FinSubProceso
+        SubProceso ParqueadoSi(a)
+            Escribir "Su vehículo de placas ", a, " SI se encuentra en el parqueadero";
+        FinSubProceso
+        SubProceso parqueadoNo(a)
+            Escribir "Su vehículo de placas ", a, " NO se encuentra en el parqueadero";
+        FinSubProceso
+        SubProceso ingresarVehiculo(a)
+            Escribir "Bienvenido Señor ", a, " ingrese su vehículo al parqueadero.";
+        FinSubProceso
+        SubProceso retirarVehiculo(a)
+            Escribir "Hasta luego Señor ", a, " puede retirar su vehiculo.";
+        FinSubProceso
+        SubProceso vehiculoRetirado(a)
+            escribir "Señor ", a, " su vehiculo ya fue retirado del parqueadero.";
+        FinSubProceso
+        
+        Proceso Punto7
+            Definir placa1, placa2, placa3, placa4, placa5, marca1, marca2, marca3, marca4, marca5, nombre1, nombre2, nombre3, nombre4, nombre5 Como Caracter;
+            Definir telefono1, telefono2, telefono3, telefono4, telefono5, a Como Entero;
+            
+            a <- 0;
+            
+            placa1 <- "CEO100";
+            placa2 <- "CAO200";
+            placa3 <- "CEO300";
+            placa4 <- "CEO400";
+            placa5 <- "CEO500";
+            marca1 <- "Chevrolet";
+            marca2 <- "Renault";
+            marca3 <- "Suzuki";
+            marca4 <- "Ford";
+            marca5 <- "Kia";
+            nombre1 <- "Carlos";
+            nombre2 <- "Camilo";
+            nombre3 <- "Juan";
+            nombre4 <- "Andres";
+            nombre5 <- "Jairo";
+            telefono1 <- 1000000;
+            telefono2 <- 2000000;
+            telefono3 <- 3000000;
+            telefono4 <- 4000000;
+            telefono5 <- 5000000;
+            
+            Repetir
+                Limpiar Pantalla;
+                Escribir "Ingrese la placa de su vehículo";
+                Escribir "1. CEO100";
+                Escribir "2. CEO200";
+                Escribir "3. CEO300";
+                Escribir "4. CEO400";
+                Escribir "5. CEO500";
+                Escribir "6. Salir";
+                Leer a;
+                Limpiar Pantalla;
+                
+                Repetir
+                    Si a = 1 Entonces
+                        placa(placa1, marca1, nombre1, telefono1);
+                        a <- 0;
+                    FinSi
+                    
+                    Si a = 2 Entonces
+                        placa(placa2, marca2, nombre2, telefono2);
+                        a <- 0;
+                    FinSi
+                    
+                    Si a = 3 Entonces
+                        placa(placa3, marca3, nombre3, telefono3);
+                        a <- 0;
+                    FinSi
+                    
+                    Si a = 4 Entonces
+                        placa(placa4, marca4, nombre4, telefono4);
+                        a <- 0;
+                    FinSi
+                    
+                    Si a = 5 Entonces
+                        placa(placa5, marca5, nombre5, telefono5);
+                        a <- 0;
+                    FinSi
+                Hasta Que a = 0 o a = 6
+            Hasta Que a = 6
+            Escribir "¡Vuelva pronto!";
+        FinProceso
+            </pre>
+        </div>
+
+        <div class="puntos">
+            <p> 
+              8. La escuela automovilística "El Maestro" requiere una aplicación que permita registrar 
+              a sus clientes en los cursos de enseñanza automovilística y establecer quienes lo han 
+              aprobado para continuar con el trámite de adquirir la licencia de conducción. Para cada 
+              usuario se debe permitir registrar su ingreso al curso, consultar usuarios que hayan 
+              presentado el curso y resultados de la prueba del curso (si fueron aprobados o no). 
+              Recuerde que el sistema debe terminar cuando el usuario así lo indique. 
+              Tenga presente que la escuela tiene capacidad máxima de gestionar 8 usuarios en su totalidad.<br>
+              <br>
+            </p>
+          <pre>
+        SubProceso RegistroNoAprobado(a)
+            Definir b Como Entero;
+            b <- 0;
+            Repetir
+                presentarCurso(a);
+                b <- 1;
+            Hasta Que b = 1
+        FinSubProceso
+        SubProceso RegistroAprobado(a)
+            Definir b Como Entero;
+            b <- 0;
+            Repetir
+                presentarCurso2(a);
+                b <- 1;
+            Hasta Que b = 1
+        FinSubProceso
+        SubProceso presentarCurso(a)
+            Definir curso Como logico;
+            Escribir "Presenta ahora tu curso.";
+            Escribir "Tan solo escribe verdadero, para confirmar la realización de tu curso";
+            Leer curso;	
+            Si curso = Verdadero Entonces
+                noAprobado(a);
+            SiNo
+                debesPresentarNoAprobado(a);
+            FinSi
+        FinSubProceso
+        SubProceso presentarCurso2(a)
+            Definir curso Como logico;
+            Escribir "Presenta ahora tu curso.";
+            Escribir "Tan solo escribe verdadero, para confirmar la realización de tu curso";
+            Leer curso;	
+            Si curso = Verdadero Entonces
+                aprobado(a);
+            SiNo
+                debesPresentarAprobado(a);
+            FinSi
+        FinSubProceso
+        SubProceso aprobado(a)
+            Definir b Como Entero;
+            Escribir "Felicidades, has aprobado. ";
+            Escribir "Para volver al menú de Usuarios presiona 1.";
+            Leer b;
+        FinSubProceso
+        SubProceso noAprobado(a)
+            Definir b Como Entero;
+            Escribir "Lo sentimos no has sido aprobado. ";
+            Escribir "Para volver al menú de Usuarios presiona 1.";
+            Leer b;
+        FinSubProceso
+        SubProceso debesPresentarNoAprobado(a)
+            Definir b Como Entero;
+            Limpiar Pantalla;
+            Repetir
+            Escribir "debes presentar tu curso";
+            Escribir "presiona 2 para realizar el curso";
+            Leer b;
+            Si b = 2 Entonces
+                presentarCurso(a);
+            FinSi
+            Hasta Que b = 2
+        FinSubProceso
+        SubProceso debesPresentarAprobado(a)
+            Definir b Como Entero;
+            Limpiar Pantalla;
+            Repetir
+                Escribir "debes presentar tu curso";
+                Escribir "presiona 2 para realizar el curso";
+                Leer b;
+                Si b = 2 Entonces
+                    presentarCurso2(a);
+                FinSi
+            Hasta Que b = 2
+        FinSubProceso
+        SubProceso pruebaPresentadaNegativa(a)
+                Escribir "Lo sentimos el señor (a) ", a;
+                Escribir "No ha sido aprobado";
+        FinSubProceso
+        SubProceso pruebaPresentadaPositiva(a)
+            Escribir "El señor (a) ", a;
+            Escribir "Ha aprobado";
+        FinSubProceso
+        
+        Proceso Punto8
+            Definir usuario1, usuario2, usuario3, usuario4, usuario5, usuario6, usuario7, usuario8 Como Caracter;
+            Definir a Como Entero;
+            Definir curso, curso2, curso3, curso4, curso5, curso6, curso7, curso8 Como Logico;
+            
+            curso <- falso;
+            curso2 <- falso;
+            curso3 <- falso;
+            curso4 <- falso;
+            curso5 <- falso;
+            curso6 <- falso;
+            curso7 <- falso;
+            curso8 <- falso;
+            
+            usuario1 <- "";
+            usuario2 <- "";
+            usuario3 <- "";
+            usuario4 <- "";
+            usuario5 <- "";
+            usuario6 <- "";
+            usuario7 <- "";
+            usuario8 <- "";
+            
+            Repetir
+                Escribir "Ingrese al usuario que desea acceder";
+                Escribir "1. ", usuario1;
+                Escribir "2. ", Usuario2;
+                Escribir "3. ", Usuario3;
+                escribir "4. ", Usuario4;
+                escribir "5. ", Usuario5;
+                Escribir "6. ", Usuario6;
+                Escribir "7. ", Usuario7;
+                Escribir "8. ", Usuario8;
+                Escribir "9. Salir";
+                Leer a;
+        //Usuario # 1
+                Si a = 1 y curso = falso Entonces
+                    Escribir "Registra tu nombre";
+                    Leer Usuario1;
+                    registroNoAprobado(Usuario1);
+                    a <- 0;
+                    curso <- Verdadero;
+                    FinSi
+                Si a = 1 y curso = Verdadero Entonces
+                    Limpiar Pantalla;
+                    pruebaPresentadaNegativa(Usuario1);
+                FinSi
+        //Usuario # 2
+                Si a = 2 y curso2 = falso Entonces
+                    Escribir "Registra tu nombre";
+                    Leer Usuario2;
+                    registroAprobado(Usuario2);
+                    a <- 0;
+                    curso2 <- Verdadero;
+                FinSi
+                Si a = 2 y curso2 = Verdadero Entonces
+                    Limpiar Pantalla;
+                    pruebaPresentadaPositiva(Usuario2);
+                FinSi
+        //Usuario # 3
+                Si 3 = 2 y curso3 = falso Entonces
+                    Escribir "Registra tu nombre";
+                    Leer Usuario3;
+                    registroAprobado(Usuario3);
+                    a <- 0;
+                    curso3 <- Verdadero;
+                FinSi
+                Si a = 3 y curso3 = Verdadero Entonces
+                    Limpiar Pantalla;
+                    pruebaPresentadaPositiva(Usuario3);
+                FinSi
+        //Usuario # 4
+                Si a = 4 y curso4= falso Entonces
+                    Escribir "Registra tu nombre";
+                    Leer Usuario4;
+                    registroAprobado(Usuario4);
+                    a <- 0;
+                    curso4 <- Verdadero;
+                FinSi
+                Si a = 4 y curso4 = Verdadero Entonces
+                    Limpiar Pantalla;
+                    pruebaPresentadaPositiva(Usuario4);
+                FinSi
+        //Usuario # 5
+                Si a = 5 y curso5 = falso Entonces
+                    Escribir "Registra tu nombre";
+                    Leer Usuario5;
+                    registroNoAprobado(Usuario5);
+                    a <- 0;
+                    curso5 <- Verdadero;
+                FinSi
+                Si a = 5 y curso5 = Verdadero Entonces
+                    Limpiar Pantalla;
+                    pruebaPresentadaNegativa(Usuario5);
+                FinSi
+        //Usuario # 6
+                Si a = 6 y curso6 = falso Entonces
+                    Escribir "Registra tu nombre";
+                    Leer Usuario6;
+                    registroAprobado(Usuario6);
+                    a <- 0;
+                    curso6<- Verdadero;
+                FinSi
+                Si a = 6 y curso6= Verdadero Entonces
+                    Limpiar Pantalla;
+                    pruebaPresentadaPositiva(Usuario6);
+                FinSi
+        //Usuario # 7
+                Si a = 7 y curso7 = falso Entonces
+                    Escribir "Registra tu nombre";
+                    Leer Usuario7;
+                    registroAprobado(Usuario7);
+                    a <- 0;
+                    curso7<- Verdadero;
+                FinSi
+                Si a = 7 y curso7 = Verdadero Entonces
+                    Limpiar Pantalla;
+                    pruebaPresentadaPositiva(Usuario7);
+                FinSi
+        //Usuario # 8
+                Si a = 8 y curso8 = falso Entonces
+                    Escribir "Registra tu nombre";
+                    Leer Usuario8;
+                    registroNoAprobado(Usuario8);
+                    a <- 0;
+                    curso8 <- Verdadero;
+                FinSi
+                Si a = 8 y curso8 = Verdadero Entonces
+                    Limpiar Pantalla;
+                    pruebaPresentadaNegativa(Usuario8);
+                FinSi
+        Hasta Que a = 9
+        FinProceso
+            </pre>
+        </div>
+    </section>
+    <div class="otrapagina">
+        <a href="taller5-3.html"> <strong>IR A LA SIGUIENTE PÁGINA</strong></a>
+    </div>
+
+    <footer>
+        © Hecho por Carlos Valencia para
+        <a href="https://www.sofka.com.co/es/sofka-university/" target="_blank"> Sofka U </a> <br>
+        Número telefónico: 3185103136 <br>
+        Correo electrónico: caliche-9696@hotmail.com
+    </footer>
+    
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/styles.css" rel="stylesheet">
+    <script src="js/archivo.js"></script>
+    <title>Mi hoja de vida</title>
+</head>
+<body id="cuerpoPagina" class="fondo1" onload="acordeon">
+    <header>
+            <img src="img/Foto.jpeg" alt="Imagen de Carlos Valencia." >
+            <h1>Mi Hoja de vida</h1>
+    </header>
+
+    <nav id="navegacion" class="colorNav1">
+       <ul>
+           <li>
+               <a id="exp" href="./experiencia.html">Experiencia laboral</a>
+            </li>
+            <li>
+                <a id="reff" href="./referencia_familiar.html">Referencias familiares</a>
+            </li>
+             <li>
+                <a id="refp" href="./referencia_personal.html">Referencias personales</a>
+            </li>
+            <li>
+                <a id="est" href="./estudios.html">Estudios realizados</a>
+            </li>
+        </ul>
+    </nav>
+
+    <main>
+        <article>
+                <h2>Informacion principal</h2>
+                <br>
+                <section>
+                    Tecnólogo mecatrónico industrial de la UNIAJC y desarrollador en proceso de aprendizaje dedicado al estudio de temas relacionados con el desarrollo web, mejorando así mis habilidades en Java, HTML, CSS, Bootstrap, Javascript, entre otros con alto grado de pertenencia, capacidades de innovación, trabajo en equipo, así como actitud de servicio y colaboración.
+                </section>
+                <div>
+                    <img src="img/aprendizaje.jpg" alt="imagen de aprendizaje">
+                </div>
+        </article>
+        <aside>
+            <a href="pdf/Hoja de vida Sofka.pdf" target="_blank">Descargar pdf de hoja de vida</a>
+            <h1>¿Deseas cambiar el color de presentación?</h1>
+            <select id="opcionesDeColor" class="selector" onchange="obtenerColor()">
+              <option value="rgb(245,245,220)">  Color original</option>
+              <option value="rgb(133, 79, 108)"> Color morado  </option>
+              <option value="rgb(95, 95, 131)">  Color azul    </option>
+              <option value="rgb(110, 92, 46)">  Color cafe    </option>
+            </select>
+          </aside>
+    </main>
+   
+
+    <footer >
+            © Hecho por Carlos Valencia para
+            <a href="https://www.sofka.com.co/es/sofka-university/" target="_blank"> Sofka U </a> <br>
+            Número telefónico: 3185103136 <br>
+            Correo electrónico: caliche-9696@hotmail.com<br>
+    </footer>
+</body>
+</html>

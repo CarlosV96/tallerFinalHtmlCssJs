@@ -1,0 +1,1172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="css/styles.css" rel="stylesheet" />
+    <title>Taller 3</title>
+  </head>
+  <body>
+    <header>
+      <div id="redes">
+        <ul>
+          <li>
+            <a href="https://github.com/CarlosV96" target="_blank"
+              ><img src="descargas/github.webp" />
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://www.linkedin.com/in/carlosandresvalencia1996/"
+              target="_blank"
+              ><img src="descargas/Linkedin.png" />
+            </a>
+          </li>
+        </ul>
+      </div>
+      <p>Bienvenidos a mi portafolio</p>
+    </header>
+
+    <div id="menuPrincipal" class="centrar">
+        <a href="index.html"> VOLVER AL MENÚ PRINCIPAL.</a> <br />
+        <br />
+        <a href="taller3.html">IR A LA PAGINA ANTERIOR</a> <br />
+        <br />
+      </div>
+
+      <article class="titulo">
+        <h1>Taller de ciclos</h1>
+      </article>
+
+      <section>
+
+      <div class="puntos">
+        <h2>PUNTO6</h2>
+        <p> 
+          6. Se está creando una aplicación que va a estar conectada con un prototipo 
+        que permita almacenar contactos telefónicos en el dispositivo. Para ello cada
+        contacto debe contener nombre completo, teléfono y organización. Se requiere
+        que la aplicación permita añadir 3 contactos verificando que el número no 
+        esté almacenado, buscar contactos almacenados y eliminar contactos si el usuario
+        lo requiere. Recuerde que el sistema debe terminar cuando el usuario así lo indique.
+          <br>
+          <br>
+        </p>
+      <pre>
+        Proceso Punto6
+        Definir a, num, num2, num3 Como entero;
+        Definir nombre, orga, nombre2, orga2, nombre3, orga3 Como Caracter;
+        Definir otra, otra2, otra3, b Como Logico;
+        
+        b <- falso;
+        otra <- falso;
+        otra2 <- falso;
+        otra3 <- falso;
+        a <- 0;
+        
+        Repetir // Menú principal
+        
+                Escribir "Menú de usuario";
+                Escribir "1. Añadir contacto 1.";
+                Escribir "2. Ver contactos almacenados";
+                Escribir "3. Eliminar contactos almacenados.";
+                Escribir "4. Salir del sistema.";
+                Leer a;
+                
+                
+                Mientras a = 1 Hacer // SI presionan 1 , puedo llenar campos primer contacto
+                    otra <- Verdadero;  // y la variable logica "otra" pasa a ser verdadera
+                    Limpiar Pantalla;
+                    Escribir "Escribe el nombre de la persona.";
+                    Leer nombre; 
+                    
+                    Escribir "Digita el número telefónico sin espacios, ni puntos.";
+                    Leer num;
+                    
+                    Escribir "Organización";
+                    Leer orga;
+                    a <- 5;  
+                FinMientras
+                Si a = 2 y otra = verdadero y b = Verdadero Entonces
+                    Limpiar Pantalla;
+                    Escribir "No tienes contactos";
+                FinSi
+                Mientras a = 2 y otra = Verdadero y b = Falso Hacer 
+                    
+                    Limpiar Pantalla;
+                    Escribir "CONTACTO 1";
+                    Escribir nombre;
+                    Escribir num;
+                    Escribir orga;
+                    Escribir "";
+                    
+                    a <- 0;
+                FinMientras
+                Si a = 2 y otra = falso Entonces // Si presiona 2 y no he llenado campos me arroja el mensaje
+                    Limpiar Pantalla;
+                    Escribir "NO HAS GUARDADO NINGUN CONTACTO";
+                    Escribir " POR FAVOR INTENTA NUEVAMENTE";
+                FinSi
+                si a = 3 y otra = falso Entonces // Si presiona 3 y no he llenado campos me arroja el mensaje
+                    Limpiar Pantalla;
+                    Escribir "NO HAS GUARDADO NINGUN CONTACTO";
+                    Escribir " POR FAVOR INTENTA NUEVAMENTE";
+                FinSi
+                
+                
+            Mientras a = 5 y otra2 = falso Hacer 
+                Repetir 
+                    Escribir "Menú de usuario";
+                    Escribir "1. Añadir contacto 2.";
+                    Escribir "2. Ver contactos almacenados";
+                    Escribir "3. Eliminar contactos almacenados.";
+                    Escribir "4. Salir del sistema.";
+                    Leer a;
+                    
+                    Mientras a = 1 Hacer  // Si le dan en 1 puedo ingresar los datos del contacto numero 2
+                        otra2 <- Verdadero; //Y la variable logica "otra2" pasa a ser verdadera
+                        a <- 5;                 // y a pasa a valer 6 para entrar al siguiente menú
+                        
+                        Limpiar Pantalla;
+                        Escribir "Escribe el nombre de la persona.";
+                        Leer nombre2; 
+                        
+                        Escribir "Digita el número telefónico sin espacios, ni puntos.";
+                        Leer num2;
+                        Si num2 = num Entonces
+                            Escribir "no se pueden repetir los numeros telefonicos";
+                            Escribir "Digita otro";
+                            Leer num2;
+                        FinSi
+                        
+                        Escribir "Organización";
+                        Leer orga2;
+                    FinMientras
+                    
+                    Si a = 2 y otra2 = falso Entonces  
+                        Limpiar Pantalla;
+                        Escribir "CONTACTO 1";
+                        Escribir nombre;
+                        Escribir num;
+                        Escribir orga;
+                        Escribir "";
+                        a <- 5;
+                    FinSi
+                    
+                    Mientras a = 2 y otra2 = Verdadero Hacer //
+                        
+                        Limpiar Pantalla;
+                        Escribir "CONTACTO 1";
+                        Escribir nombre;
+                        Escribir num;
+                        Escribir orga;
+                        Escribir "";
+                            
+                        Escribir "CONTACTO 2";
+                        Escribir nombre2;
+                        Escribir num2;
+                        Escribir orga2;
+                        Escribir "";
+                        
+                        a <- 0;
+                    FinMientras
+                    
+                    si a = 3 y otra2 = falso y otra = Verdadero Entonces 
+                        Limpiar Pantalla;
+                            Escribir "¿Que contacto deseas eliminar?";
+                            Escribir "1. ", nombre;
+                            Leer a;
+                            Si a = 1 Entonces
+                                b <- Verdadero;
+                            FinSi
+                        FinSi
+                        
+        
+                    
+                    Hasta Que a = 1 o a = 5 
+                FinMientras 
+                
+                Mientras a = 5 Hacer 
+                    Repetir 
+                        Escribir "Menú de usuario";
+                        Escribir "1. Añadir contacto 3.";
+                        Escribir "2. Ver contactos almacenados";
+                        Escribir "3. Eliminar contactos almacenados.";
+                        Escribir "4. Salir del sistema.";
+                        Leer a;
+                        
+                        Mientras a = 1 Hacer //Si presionan el 1 puedo llenar los campos del contacto 3
+                            otra3 <- Verdadero; //La variable logica se va a convertir en verdadera
+                            a <- 6;                //y  a pasa a valer 6
+                            
+                            Limpiar Pantalla;
+                            Escribir "Escribe el nombre de la persona.";
+                            Leer nombre3; 
+                            
+                            Escribir "Digita el número telefónico sin espacios, ni puntos.";
+                            Leer num3;
+                            Si num3 = num2 o num3 = num Entonces
+                                Escribir "no se pueden repetir los numeros telefonicos";
+                                Escribir "Digita otro";
+                                Leer num2;
+                            FinSi
+                            
+                            
+                            Escribir "Organización";
+                            Leer orga3;
+                        FinMientras
+                        
+                        Si a = 2 y otra3 = falso Entonces 
+                            Limpiar Pantalla;
+                            Escribir "CONTACTO 1";
+                            Escribir nombre;
+                            Escribir num;
+                            Escribir orga;
+                            Escribir "";
+                            
+                            Escribir "CONTACTO 2";
+                            Escribir nombre2;
+                            Escribir num2;
+                            Escribir orga2;
+                            Escribir "";
+                            a <- 5;
+                        FinSi
+                        Mientras a = 2 y otra3 = Verdadero Hacer 
+                            
+                            Limpiar Pantalla;
+                            Escribir "CONTACTO 1";
+                            Escribir nombre;
+                            Escribir num;
+                            Escribir orga;
+                            Escribir "";
+                            
+                            Escribir "CONTACTO 2";
+                            Escribir nombre2;
+                            Escribir num2;
+                            Escribir orga2;
+                            Escribir "";
+                            
+                            Escribir "CONTACTO 3";
+                            Escribir nombre3;
+                            Escribir num3;
+                            Escribir orga3;
+                            Escribir "";
+                            
+                            a <- 0;
+                        FinMientras
+                        
+                        si a = 3 y otra = Verdadero y otra2 = Verdadero Entonces 
+                            Limpiar Pantalla;
+                            Escribir "¿Que contacto deseas eliminar?";
+                            Escribir "2. ", nombre2;
+                            Leer a;
+                            Si a = 1 Entonces
+                                c <- verdadero;
+                            FinSi
+                        FinSi
+                        
+                        si a = 3 y otra3 = Verdadero y otra2 = Verdadero y otra = Verdadero Entonces 
+                            Limpiar Pantalla;
+                            Escribir "¿Que contacto deseas eliminar?";
+                            Escribir "3. ", nombre3;
+                            Leer a;
+                        FinSi
+                    Hasta Que a = 1 o a = 2 o a = 3 o a = 4 o a = 6
+                        Mientras  a = 6 Hacer
+                            Repetir
+                            Limpiar Pantalla;
+                            Escribir "Almacenamiento lleno";
+                            Escribir "2. Ver contactos almacenados";
+                            Escribir "3. Eliminar contactos almacenados.";
+                            Escribir "4. Salir del sistema.";
+                            Leer a;
+                        
+                        Si a = 2 Entonces
+                            Limpiar Pantalla;
+                            Escribir "CONTACTO 1";
+                            Escribir nombre;
+                            Escribir num;
+                            Escribir orga;
+                            Escribir "";
+                            
+                            Escribir "CONTACTO 2";
+                            Escribir nombre2;
+                            Escribir num2;
+                            Escribir orga2;
+                            Escribir "";
+                            
+                            Escribir "CONTACTO 3";
+                            Escribir nombre3;
+                            Escribir num3;
+                            Escribir orga3;
+                            Escribir "";
+                            
+                        FinSi
+                    
+                    Si a = 2 Entonces
+                        Escribir "1. Volver al menú principal";
+                        Leer a;
+                    FinSi
+                    
+                Hasta Que a = 1 o a = 2 o a = 3 o a = 4
+            FinMientras
+    
+                FinMientras
+            Hasta Que a = 4
+    
+    FinProceso
+        </pre>
+    </div>
+
+    <div class="puntos">
+        <h2>PUNTO7</h2>
+        <p> 
+          7. El parqueadero "El guardián" presta sus servicios de parqueadero nocturno para los usuarios
+            del barrio y requiere una aplicación que permita registrar los vehículos que se cuidan
+            en estas instalaciones. Se sugiere que el parqueadero tenga los atributos del vehículo
+            como son, placa y marca, y los datos del cliente como son nombre completo y número de
+            teléfono. Para cada vehículo se debe permitir la opción de ingresar al parqueadero,
+            retirar del parqueadero y consultar si un vehículo se encuentra en el parqueadero.
+            Recuerde que el sistema debe terminar cuando el usuario así lo indique. 
+            Tenga en presente que el parqueadero solo puede almacenar máximo 5 vehículos.<br>
+          <br>
+        </p>
+      <pre>
+    Proceso Punto7
+        Definir placa1, placa2, placa3, placa4, placa5, marca1, marca2, marca3, marca4, marca5, nombre1, nombre2, nombre3, nombre4, nombre5 Como Caracter;
+        Definir telefono1, telefono2, telefono3, telefono4, telefono5, a, b Como Entero;
+        Definir retirado, ingresar, ingresado, z, x Como Logico;
+        
+        x <- Verdadero;
+        z <- falso;
+        b <- 0;
+        retirado <- Falso;
+        ingresado <- Verdadero;
+        a <- 0;
+        
+        placa1 <- "CEO100";
+        placa2 <- "CAO200";
+        placa3 <- "CEO300";
+        placa4 <- "CEO400";
+        placa5 <- "CEO500";
+        
+        marca1 <- "Chevrolet";
+        marca2 <- "Renault";
+        marca3 <- "Suzuki";
+        marca4 <- "Ford";
+        marca5 <- "Kia";
+        
+        nombre1 <- "Carlos";
+        nombre2 <- "Camilo";
+        nombre3 <- "Juan";
+        nombre4 <- "Andres";
+        nombre5 <- "Jairo";
+        
+        telefono1 <- 1000000;
+        telefono2 <- 2000000;
+        telefono3 <- 3000000;
+        telefono4 <- 4000000;
+        telefono5 <- 5000000;
+        
+        Repetir
+        Escribir "Ingrese la placa de su vehículo";
+        Escribir "1. CEO100";
+        Escribir "2. CEO200";
+        Escribir "3. CEO300";
+        Escribir "4. CEO400";
+        Escribir "5. CEO500";
+        Escribir "6. Salir";
+        Leer a;
+        
+        Limpiar Pantalla;
+        
+        //Inicia placa 1 con datos de persona 1
+        Repetir
+                
+        Si a = 1 Entonces
+            Escribir	"Vehículo de placas ", placa1;
+                Escribir  "Marca: ", marca1;
+                Escribir "Teléfono: ", telefono1;
+                Escribir  "Señor ", nombre1, " Ingrese la opción que desee";
+                Escribir "1. Ingresar al parqueadero";
+                Escribir "2. Retirar del parqueadero";
+                Escribir "3. Consultar si esta en el parqueadero";
+                Escribir "4. Volver al menú anterior.";
+                Escribir " ";
+                Escribir "Si desea salir, presione la tecla 6";
+                Leer b;
+        
+            FinSi
+            
+            Si b = 1 y ingresado = Verdadero y retirado = Falso y z = Falso Entonces
+                Limpiar Pantalla;
+                
+                Escribir "Bienvenido Señor ", nombre1, " su vehículo ya está en el parqueadero.";
+            FinSi
+            
+            Si b = 1 y ingresado = Falso y retirado = Verdadero Entonces
+                Limpiar Pantalla;
+                ingresado <- Verdadero; 
+                retirado <- Falso;
+                z <- Verdadero;
+                x <- Verdadero;
+                Escribir "Bienvenido Señor ", nombre1, " ingrese su vehículo al parqueadero.";
+                
+            FinSi
+            
+                Si b = 1 y retirado = Verdadero y z = Falso Entonces
+                    Limpiar Pantalla;
+                    x <- Verdadero;
+                    Escribir "Bienvenido Señor ", nombre1, " ingrese su vehículo al parqueadero.";
+                FinSi
+                
+                // Todo lo relacionado con ingresar al parqueadero es de aquí para arriba
+                
+                Si b = 2 y retirado = Falso y ingresado = Verdadero Entonces
+                    Limpiar Pantalla;
+                    b <- 9;
+                    retirado <- Verdadero;
+                    x <- falso;
+                    Escribir "Hasta luego Señor ", nombre1, " puede retirar su vehiculo.";
+                FinSi
+                
+                Si b = 2 y retirado = Verdadero Entonces
+                    Limpiar Pantalla;
+                    z <- Verdadero;
+                    ingresado <- falso;
+                    escribir "Señor ", nombre1, " su vehiculo ya fue retirado del parqueadero.";
+                FinSi
+                
+                // Todo lo relacionado con retirar del parqueadero, es de acá para arriba
+                
+                Si b = 3 y ingresado = Falso y retirado = Verdadero Entonces
+                    Limpiar Pantalla;
+                    Escribir "Su vehículo de placas ", placa1, " NO se encuentra en el parqueadero";
+                FinSi
+                
+                Si b = 3 y ingresado = Verdadero y retirado = Verdadero y x = falso Entonces
+                    Limpiar Pantalla;
+                    Escribir "Su vehículo de placas ", placa1, " NO se encuentra en el parqueadero";
+                FinSi
+                
+                Si b = 3 y ingresado = Verdadero y retirado = Falso Entonces
+                    Limpiar Pantalla;
+                    Escribir "Su vehículo de placas ", placa1, " SI se encuentra en el parqueadero";
+                FinSi
+                
+                Si b = 3 y ingresado = Verdadero y retirado = Verdadero y x = Verdadero Entonces
+                    Limpiar Pantalla;
+                    Escribir "Su vehículo de placas ", placa1, " SI se encuentra en el parqueadero";
+                FinSi
+                
+                Si b = 6 Entonces
+                    a <- 6;
+                FinSi
+                
+                Si b = 4 Entonces
+                    Limpiar Pantalla;
+                FinSi
+            Hasta Que b = 4 o a = 2 o a = 3 o a = 4 o a = 5 o a = 6
+            //INICIA PLACA 2
+            //CON DATOS DE PERSONA 2
+            Repetir
+                
+                Si a = 2 Entonces
+                    Escribir	"Vehículo de placas ", placa2;
+                    Escribir  "Marca: ", marca2;
+                    Escribir "Teléfono: ", telefono2;
+                    Escribir  "Señor ", nombre2, " Ingrese la opción que desee";
+                    Escribir "1. Ingresar al parqueadero";
+                    Escribir "2. Retirar del parqueadero";
+                    Escribir "3. Consultar si esta en el parqueadero";
+                    Escribir "4. Volver al menú anterior.";
+                    Escribir " ";
+                    Escribir "Si desea salir, presione la tecla 6";
+                    Leer b;
+                    
+                FinSi
+                
+                Si b = 1 y ingresado = Verdadero y retirado = Falso y z = Falso Entonces
+                    Limpiar Pantalla;
+                    
+                    Escribir "Bienvenido Señor ", nombre2, " su vehículo ya está en el parqueadero.";
+                FinSi
+                
+                Si b = 1 y ingresado = Falso y retirado = Verdadero Entonces
+                    Limpiar Pantalla;
+                    ingresado <- Verdadero;
+                    retirado <- Falso;
+                    z <- falso;
+                    x <- Falso;
+                    Escribir "Bienvenido Señor ", nombre2, " ingrese su vehículo al parqueadero.";
+                    
+                FinSi
+                
+                Si b = 1 y retirado = Verdadero y z = Falso Entonces
+                    Limpiar Pantalla;
+                    x <- Verdadero;
+                    Escribir "Bienvenido Señor ", nombre2, " ingrese su vehículo al parqueadero.";
+                FinSi
+                
+                // Todo lo relacionado con ingresar al parqueadero es de aquí para arriba
+                
+                Si b = 2 y retirado = Falso y ingresado = Verdadero Entonces
+                    Limpiar Pantalla;
+                    b <- 9;
+                    retirado <- Verdadero;
+                    x <- falso;
+                    Escribir "Hasta luego Señor ", nombre2, " puede retirar su vehiculo.";
+                FinSi
+                
+                Si b = 2 y retirado = Verdadero Entonces
+                    Limpiar Pantalla;
+                    z <- Verdadero;
+                    ingresado <- falso;
+                    escribir "Señor ", nombre2, " su vehiculo ya fue retirado del parqueadero.";
+                FinSi
+                
+                // Todo lo relacionado con retirar del parqueadero, es de acá para arriba
+                
+                Si b = 3 y ingresado = Falso y retirado = Verdadero Entonces
+                    Limpiar Pantalla;
+                    Escribir "Su vehículo de placas ", placa2, " NO se encuentra en el parqueadero";
+                FinSi
+                
+                Si b = 3 y ingresado = Verdadero y retirado = Verdadero y x = falso Entonces
+                    Limpiar Pantalla;
+                    Escribir "Su vehículo de placas ", placa2, " NO se encuentra en el parqueadero";
+                FinSi
+                
+                Si b = 3 y ingresado = Verdadero y retirado = Falso Entonces
+                    Limpiar Pantalla;
+                    Escribir "Su vehículo de placas ", placa2, " SI se encuentra en el parqueadero";
+                FinSi
+                
+                Si b = 3 y ingresado = Verdadero y retirado = Verdadero y x = Falso Entonces
+                    Limpiar Pantalla;
+                    Escribir "Su vehículo de placas ", placa2, " SI se encuentra en el parqueadero";
+                FinSi
+                
+                Si b = 6 Entonces
+                    a <- 6;
+                FinSi
+                
+                Si b = 4 Entonces
+                    Limpiar Pantalla;
+                FinSi
+            Hasta Que b = 4 o a = 3 o a = 4 o a = 5 o a = 6
+            //INICIA PLACA 3
+            //CON DATOS DE PERSONA 3
+            Repetir
+                
+                Si a = 3 Entonces
+                    Escribir	"Vehículo de placas ", placa3;
+                    Escribir  "Marca: ", marca3;
+                    Escribir "Teléfono: ", telefono3;
+                    Escribir  "Señor ", nombre3, " Ingrese la opción que desee";
+                    Escribir "1. Ingresar al parqueadero";
+                    Escribir "2. Retirar del parqueadero";
+                    Escribir "3. Consultar si esta en el parqueadero";
+                    Escribir "4. Volver al menú anterior.";
+                    Escribir " ";
+                    Escribir "Si desea salir, presione la tecla 6";
+                    Leer b;
+                    
+                FinSi
+                
+                Si b = 1 y ingresado = Verdadero y retirado = Falso y z = Falso Entonces
+                    Limpiar Pantalla;
+                    
+                    Escribir "Bienvenido Señor ", nombre3, " su vehículo ya está en el parqueadero.";
+                FinSi
+                
+                Si b = 1 y ingresado = Falso y retirado = Verdadero Entonces
+                    Limpiar Pantalla;
+                    ingresado <- Verdadero;
+                    retirado <- Falso;
+                    z <- Verdadero;
+                    x <- Verdadero;
+                    Escribir "Bienvenido Señor ", nombre3, " ingrese su vehículo al parqueadero.";
+                    
+                FinSi
+                
+                Si b = 1 y retirado = Verdadero y z = Falso Entonces
+                    Limpiar Pantalla;
+                    x <- Verdadero;
+                    Escribir "Bienvenido Señor ", nombre3, " ingrese su vehículo al parqueadero.";
+                FinSi
+                
+                // Todo lo relacionado con ingresar al parqueadero es de aquí para arriba
+                
+                Si b = 2 y retirado = Falso y ingresado = Verdadero Entonces
+                    Limpiar Pantalla;
+                    b <- 9;
+                    retirado <- Verdadero;
+                    x <- falso;
+                    Escribir "Hasta luego Señor ", nombre3, " puede retirar su vehiculo.";
+                FinSi
+                
+                Si b = 2 y retirado = Verdadero Entonces
+                    Limpiar Pantalla;
+                    z <- Verdadero;
+                    ingresado <- falso;
+                    escribir "Señor ", nombre3, " su vehiculo ya fue retirado del parqueadero.";
+                FinSi
+                
+                // Todo lo relacionado con retirar del parqueadero, es de acá para arriba
+                
+                Si b = 3 y ingresado = Falso y retirado = Verdadero Entonces
+                    Limpiar Pantalla;
+                    Escribir "Su vehículo de placas ", placa3, " NO se encuentra en el parqueadero";
+                FinSi
+                
+                Si b = 3 y ingresado = Verdadero y retirado = Verdadero y x = falso Entonces
+                    Limpiar Pantalla;
+                    Escribir "Su vehículo de placas ", placa3, " NO se encuentra en el parqueadero";
+                FinSi
+                
+                Si b = 3 y ingresado = Verdadero y retirado = Falso Entonces
+                    Limpiar Pantalla;
+                    Escribir "Su vehículo de placas ", placa3, " SI se encuentra en el parqueadero";
+                FinSi
+                
+                Si b = 3 y ingresado = Verdadero y retirado = Verdadero y x = Verdadero Entonces
+                    Limpiar Pantalla;
+                    Escribir "Su vehículo de placas ", placa3, " SI se encuentra en el parqueadero";
+                FinSi
+                
+                Si b = 6 Entonces
+                    a <- 6;
+                FinSi
+                
+                Si b = 4 Entonces
+                    Limpiar Pantalla;
+                FinSi
+            Hasta Que b = 4 o a = 4 o a = 5 o a = 6
+            //INICIA PLACA 4
+            //CON DATOS DE PERSONA 4
+            Repetir
+                
+                Si a = 4 Entonces
+                    Escribir	"Vehículo de placas ", placa4;
+                    Escribir  "Marca: ", marca4;
+                    Escribir "Teléfono: ", telefono4;
+                    Escribir  "Señor ", nombre4, " Ingrese la opción que desee";
+                    Escribir "1. Ingresar al parqueadero";
+                    Escribir "2. Retirar del parqueadero";
+                    Escribir "3. Consultar si esta en el parqueadero";
+                    Escribir "4. Volver al menú anterior.";
+                    Escribir " ";
+                    Escribir "Si desea salir, presione la tecla 6";
+                    Leer b;
+                    
+                FinSi
+                
+                Si b = 1 y ingresado = Verdadero y retirado = Falso y z = Falso Entonces
+                    Limpiar Pantalla;
+                    
+                    Escribir "Bienvenido Señor ", nombre4, " su vehículo ya está en el parqueadero.";
+                FinSi
+                
+                Si b = 1 y ingresado = Falso y retirado = Verdadero Entonces
+                    Limpiar Pantalla;
+                    ingresado <- Verdadero;
+                    retirado <- Falso;
+                    z <- Verdadero;
+                    x <- Verdadero;
+                    Escribir "Bienvenido Señor ", nombre4, " ingrese su vehículo al parqueadero.";
+                    
+                FinSi
+                
+                Si b = 1 y retirado = Verdadero y z = Falso Entonces
+                    Limpiar Pantalla;
+                    x <- Verdadero;
+                    Escribir "Bienvenido Señor ", nombre4, " ingrese su vehículo al parqueadero.";
+                FinSi
+                
+                // Todo lo relacionado con ingresar al parqueadero es de aquí para arriba
+                
+                Si b = 2 y retirado = Falso y ingresado = Verdadero Entonces
+                    Limpiar Pantalla;
+                    b <- 9;
+                    retirado <- Verdadero;
+                    x <- falso;
+                    Escribir "Hasta luego Señor ", nombre4, " puede retirar su vehiculo.";
+                FinSi
+                
+                Si b = 2 y retirado = Verdadero Entonces
+                    Limpiar Pantalla;
+                    z <- Verdadero;
+                    ingresado <- falso;
+                    escribir "Señor ", nombre4, " su vehiculo ya fue retirado del parqueadero.";
+                FinSi
+                
+                // Todo lo relacionado con retirar del parqueadero, es de acá para arriba
+                
+                Si b = 3 y ingresado = Falso y retirado = Verdadero Entonces
+                    Limpiar Pantalla;
+                    Escribir "Su vehículo de placas ", placa4, " NO se encuentra en el parqueadero";
+                FinSi
+                
+                Si b = 3 y ingresado = Verdadero y retirado = Verdadero y x = falso Entonces
+                    Limpiar Pantalla;
+                    Escribir "Su vehículo de placas ", placa4, " NO se encuentra en el parqueadero";
+                FinSi
+                
+                Si b = 3 y ingresado = Verdadero y retirado = Falso Entonces
+                    Limpiar Pantalla;
+                    Escribir "Su vehículo de placas ", placa4, " SI se encuentra en el parqueadero";
+                FinSi
+                
+                Si b = 3 y ingresado = Verdadero y retirado = Verdadero y x = Verdadero Entonces
+                    Limpiar Pantalla;
+                    Escribir "Su vehículo de placas ", placa4, " SI se encuentra en el parqueadero";
+                FinSi
+                
+                Si b = 6 Entonces
+                    a <- 6;
+                FinSi
+                
+                Si b = 4 Entonces
+                    Limpiar Pantalla;
+                FinSi
+            Hasta Que b = 4 o a = 5 o a = 6
+            //INICIA PLACA 5
+            //CON DATOS DE PERSONA 5
+            Repetir
+                
+                Si a = 5 Entonces
+                    Escribir	"Vehículo de placas ", placa5;
+                    Escribir  "Marca: ", marca5;
+                    Escribir "Teléfono: ", telefono5;
+                    Escribir  "Señor ", nombre5, " Ingrese la opción que desee";
+                    Escribir "1. Ingresar al parqueadero";
+                    Escribir "2. Retirar del parqueadero";
+                    Escribir "3. Consultar si esta en el parqueadero";
+                    Escribir "4. Volver al menú anterior.";
+                    Escribir " ";
+                    Escribir "Si desea salir, presione la tecla 6";
+                    Leer b;
+                    
+                FinSi
+                
+                Si b = 1 y ingresado = Verdadero y retirado = Falso y z = Falso Entonces
+                    Limpiar Pantalla;
+                    
+                    Escribir "Bienvenido Señor ", nombre5, " su vehículo ya está en el parqueadero.";
+                FinSi
+                
+                Si b = 1 y ingresado = Falso y retirado = Verdadero Entonces
+                    Limpiar Pantalla;
+                    ingresado <- Verdadero;
+                    retirado <- Falso;
+                    z <- Verdadero;
+                    x <- Verdadero;
+                    Escribir "Bienvenido Señor ", nombre5, " ingrese su vehículo al parqueadero.";
+                    
+                FinSi
+                
+                Si b = 1 y retirado = Verdadero y z = Falso Entonces
+                    Limpiar Pantalla;
+                    x <- Verdadero;
+                    Escribir "Bienvenido Señor ", nombre5, " ingrese su vehículo al parqueadero.";
+                FinSi
+                
+                // Todo lo relacionado con ingresar al parqueadero es de aquí para arriba
+                
+                Si b = 2 y retirado = Falso y ingresado = Verdadero Entonces
+                    Limpiar Pantalla;
+                    b <- 9;
+                    retirado <- Verdadero;
+                    x <- falso;
+                    Escribir "Hasta luego Señor ", nombre5, " puede retirar su vehiculo.";
+                FinSi
+                
+                Si b = 2 y retirado = Verdadero Entonces
+                    Limpiar Pantalla;
+                    z <- Verdadero;
+                    ingresado <- falso;
+                    escribir "Señor ", nombre5, " su vehiculo ya fue retirado del parqueadero.";
+                FinSi
+                
+                // Todo lo relacionado con retirar del parqueadero, es de acá para arriba
+                
+                Si b = 3 y ingresado = Falso y retirado = Verdadero Entonces
+                    Limpiar Pantalla;
+                    Escribir "Su vehículo de placas ", placa5, " NO se encuentra en el parqueadero";
+                FinSi
+                
+                Si b = 3 y ingresado = Verdadero y retirado = Verdadero y x = falso Entonces
+                    Limpiar Pantalla;
+                    Escribir "Su vehículo de placas ", placa5, " NO se encuentra en el parqueadero";
+                FinSi
+                
+                Si b = 3 y ingresado = Verdadero y retirado = Falso Entonces
+                    Limpiar Pantalla;
+                    Escribir "Su vehículo de placas ", placa5, " SI se encuentra en el parqueadero";
+                FinSi
+                
+                Si b = 3 y ingresado = Verdadero y retirado = Verdadero y x = Verdadero Entonces
+                    Limpiar Pantalla;
+                    Escribir "Su vehículo de placas ", placa5, " SI se encuentra en el parqueadero";
+                FinSi
+                
+                Si b = 6 Entonces
+                    a <- 6;
+                FinSi
+                
+                Si b = 4 Entonces
+                    Limpiar Pantalla;
+                FinSi
+            Hasta Que b = 4 o a = 6
+    
+            Hasta Que a = 6
+        Escribir "Vuelva pronto.";
+        
+    FinProceso
+        </pre>
+    </div>
+
+    <div class="puntos">
+        <h2>PUNTO8</h2>
+        <p> 
+          8. La escuela automovilística "El Maestro" requiere una aplicación que permita registrar 
+        a sus clientes en los cursos de enseñanza automovilística y establecer quienes lo han aprobado
+        para continuar con el trámite de adquirir la licencia de conducción. Para cada usuario se 
+        debe permitir registrar su ingreso al curso, consultar usuarios que hayan presentado el
+        curso y resultados de la prueba del curso (si fueron aprobados o no). Recuerde que el 
+        sistema debe terminar cuando el usuario así lo indique. Tenga presente que la escuela 
+        tiene capacidad máxima de gestionar 8 usuarios en su totalidad.<br>
+          <br>
+        </p>
+      <pre>
+    Proceso Punto8
+        Definir usuario1, usuario2, usuario3, usuario4, usuario5, usuario6, usuario7, usuario8 Como Caracter;
+        Definir a, b Como Entero;
+        Definir curso, curso2, curso3, curso4, curso5, curso6, curso7, curso8, z Como Logico;
+        
+        b <- 2;
+        curso <- falso;
+        curso2 <- falso;
+        curso3 <- falso;
+        curso4 <- falso;
+        curso5 <- falso;
+        curso6 <- falso;
+        curso7 <- falso;
+        curso8 <- falso;
+        usuario1 <- "";
+        usuario2 <- "";
+        usuario3 <- "";
+        usuario4 <- "";
+        usuario5 <- "";
+        usuario6 <- "";
+        usuario7 <- "";
+        usuario8 <- "";
+        
+        
+        Repetir
+        Escribir "Ingrese al usuario que desea acceder";
+        Escribir "1. ", usuario1;
+        Escribir "2. ", Usuario2;
+        Escribir "3. ", Usuario3;
+        escribir "4. ", Usuario4;
+        escribir "5. ", Usuario5;
+        Escribir "6. ", Usuario6;
+        Escribir "7. ", Usuario7;
+        Escribir "8. ", Usuario8;
+        Escribir "9. Salir";
+        Leer a;
+        
+    Si a = 1 y curso = falso Entonces
+        Limpiar Pantalla;
+        Escribir  "Registra tu nombre";
+        Leer usuario1;
+        Repetir
+            Si b = 2 Entonces
+            Limpiar Pantalla;
+            Escribir "Presenta ahora tu curso";
+            Escribir "Tan solo escribe verdadero, para confirmar la realización de tu curso";
+            Leer curso;		
+        FinSi
+        
+        Si curso = Verdadero Entonces
+            Limpiar Pantalla;
+            Escribir "Lo sentimos no has sido aprobado. ";
+            Escribir "Para volver al menú de Usuarios presiona 1.";
+            Leer b;
+            a <- 10;
+        SiNo
+            Limpiar Pantalla;
+            Escribir "debes presentar tu curso";
+            Escribir "presiona 2 para realizar el curso";
+            Escribir "o para volver al menú de usuarios presiona el 1";
+            Leer b;
+        FinSi
+        Hasta Que b = 1
+    FinSi
+    Si a = 1 y curso = Verdadero Entonces
+        Escribir "Lo sentimos el señor (a) ", usuario1;
+        Escribir "No ha sido aprobado";
+    FinSi
+    // Usuario numero 2
+    // 
+    // 
+    Si a = 2 y curso2 = falso Entonces
+        Limpiar Pantalla;
+        Escribir  "Registra tu nombre";
+        Leer usuario2;
+        Repetir
+            Si b = 2 Entonces
+                Limpiar Pantalla;
+                Escribir "Presenta ahora tu curso";
+                Escribir "Tan solo escribe verdadero, para confirmar la realización de tu curso";
+                Leer curso2;
+            FinSi
+            
+            Si curso2 = Verdadero Entonces
+                Limpiar Pantalla;
+                Escribir "Felicidades, has aprobado. ";
+                Escribir "Para volver al menú de Usuarios presiona 1.";
+                Leer b;
+                a <- 10;
+            SiNo
+                Limpiar Pantalla;
+                Escribir "debes presentar tu curso";
+                Escribir "presiona 2 para realizar el curso";
+                Escribir "o para volver al menú de usuarios presiona el 1";
+                Leer b;
+            FinSi
+        Hasta Que b = 1
+    FinSi
+    Si a = 2 y curso2 = Verdadero Entonces
+        Escribir "El señor (a) ", usuario2;
+        Escribir "Ha aprobado";
+    FinSi
+    // Usuario numero 3
+    // 
+    // 
+    Si a = 3 y curso3 = falso Entonces
+        Limpiar Pantalla;
+        Escribir  "Registra tu nombre";
+        Leer usuario3;
+        Repetir
+            Si b = 2 Entonces
+                Limpiar Pantalla;
+                Escribir "Presenta ahora tu curso";
+                Escribir "Tan solo escribe verdadero, para confirmar la realización de tu curso";
+                Leer curso3;
+            FinSi
+            
+            Si curso3 = Verdadero Entonces
+                Limpiar Pantalla;
+                Escribir "Felicidades, has aprobado. ";
+                Escribir "Para volver al menú de Usuarios presiona 1.";
+                Leer b;
+                a <- 10;
+            SiNo
+                Limpiar Pantalla;
+                Escribir "debes presentar tu curso";
+                Escribir "presiona 2 para realizar el curso";
+                Escribir "o para volver al menú de usuarios presiona el 1";
+                Leer b;
+            FinSi
+        Hasta Que b = 1
+    FinSi
+    Si a = 3 y curso3 = Verdadero Entonces
+        Escribir "El señor (a) ", usuario3;
+        Escribir "Ha aprobado";
+    FinSi
+    
+    // Usuario numero 4
+    // 
+    // 
+    Si a = 4 y curso4 = falso Entonces
+        Limpiar Pantalla;
+        Escribir  "Registra tu nombre";
+        Leer usuario4;
+        Repetir
+            Si b = 2 Entonces
+                Limpiar Pantalla;
+                Escribir "Presenta ahora tu curso";
+                Escribir "Tan solo escribe verdadero, para confirmar la realización de tu curso";
+                Leer curso4;
+            FinSi
+            
+            Si curso4 = Verdadero Entonces
+                Limpiar Pantalla;
+                Escribir "Lo sentimos no has sido aprobado. ";
+                Escribir "Para volver al menú de Usuarios presiona 1.";
+                Leer b;
+                a <- 10;
+            SiNo
+                Limpiar Pantalla;
+                Escribir "debes presentar tu curso";
+                Escribir "presiona 2 para realizar el curso";
+                Escribir "o para volver al menú de usuarios presiona el 1";
+                Leer b;
+            FinSi
+        Hasta Que b = 1
+    FinSi
+    Si a = 4 y curso4 = Verdadero Entonces
+        Escribir "Lo sentimos el señor (a) ", usuario4;
+        Escribir "No ha sido aprobado";
+    FinSi
+    
+    // Usuario numero 5
+    // 
+    // 
+    Si a = 5 y curso5 = falso Entonces
+        Limpiar Pantalla;
+        Escribir  "Registra tu nombre";
+        Leer usuario5;
+        Repetir
+            Si b = 2 Entonces
+                Limpiar Pantalla;
+                Escribir "Presenta ahora tu curso";
+                Escribir "Tan solo escribe verdadero, para confirmar la realización de tu curso";
+                Leer curso5;
+            FinSi
+            
+            Si curso5 = Verdadero Entonces
+                Limpiar Pantalla;
+                Escribir "Felicidades, has aprobado. ";
+                Escribir "Para volver al menú de Usuarios presiona 1.";
+                Leer b;
+                a <- 10;
+            SiNo
+                Limpiar Pantalla;
+                Escribir "debes presentar tu curso";
+                Escribir "presiona 2 para realizar el curso";
+                Escribir "o para volver al menú de usuarios presiona el 1";
+                Leer b;
+            FinSi
+        Hasta Que b = 1
+    FinSi
+    Si a = 5 y curso5 = Verdadero Entonces
+        Escribir "El señor (a) ", usuario5;
+        Escribir "Ha aprobado";
+    FinSi
+    
+    // Usuario numero 6
+    // 
+    // 
+    Si a = 6 y curso6 = falso Entonces
+        Limpiar Pantalla;
+        Escribir  "Registra tu nombre";
+        Leer usuario6;
+        Repetir
+            Si b = 2 Entonces
+                Limpiar Pantalla;
+                Escribir "Presenta ahora tu curso";
+                Escribir "Tan solo escribe verdadero, para confirmar la realización de tu curso";
+                Leer curso6;
+            FinSi
+            
+            Si curso6 = Verdadero Entonces
+                Limpiar Pantalla;
+                Escribir "Felicidades, has aprobado. ";
+                Escribir "Para volver al menú de Usuarios presiona 1.";
+                Leer b;
+                a <- 10;
+            SiNo
+                Limpiar Pantalla;
+                Escribir "debes presentar tu curso";
+                Escribir "presiona 2 para realizar el curso";
+                Escribir "o para volver al menú de usuarios presiona el 1";
+                Leer b;
+            FinSi
+        Hasta Que b = 1
+    FinSi
+    Si a = 6 y curso6 = Verdadero Entonces
+        Escribir "El señor (a) ", usuario6;
+        Escribir "Ha aprobado";
+    FinSi
+    
+    // Usuario numero 7
+    // 
+    // 
+    Si a = 7 y curso7 = falso Entonces
+        Limpiar Pantalla;
+        Escribir  "Registra tu nombre";
+        Leer usuario7;
+        Repetir
+            Si b = 2 Entonces
+                Limpiar Pantalla;
+                Escribir "Presenta ahora tu curso";
+                Escribir "Tan solo escribe verdadero, para confirmar la realización de tu curso";
+                Leer curso7;
+            FinSi
+            
+            Si curso7 = Verdadero Entonces
+                Limpiar Pantalla;
+                Escribir "Felicidades, has aprobado. ";
+                Escribir "Para volver al menú de Usuarios presiona 1.";
+                Leer b;
+                a <- 10;
+            SiNo
+                Limpiar Pantalla;
+                Escribir "debes presentar tu curso";
+                Escribir "presiona 2 para realizar el curso";
+                Escribir "o para volver al menú de usuarios presiona el 1";
+                Leer b;
+            FinSi
+        Hasta Que b = 1
+    FinSi
+    Si a = 7 y curso7 = Verdadero Entonces
+        Escribir "El señor (a) ", usuario7;
+        Escribir "Ha aprobado";
+    FinSi
+    // Usuario numero 7
+    Si a = 8 y curso8 = falso Entonces
+        Limpiar Pantalla;
+        Escribir  "Registra tu nombre";
+        Leer usuario8;
+        Repetir
+            Si b = 2 Entonces
+                Limpiar Pantalla;
+                Escribir "Presenta ahora tu curso";
+                Escribir "Tan solo escribe verdadero, para confirmar la realización de tu curso";
+                Leer curso8;
+            FinSi
+            
+            Si curso8 = Verdadero Entonces
+                Limpiar Pantalla;
+                Escribir "Lo sentimos no has sido aprobado. ";
+                Escribir "Para volver al menú de Usuarios presiona 1.";
+                Leer b;
+                a <- 10;
+            SiNo
+                Limpiar Pantalla;
+                Escribir "debes presentar tu curso";
+                Escribir "presiona 2 para realizar el curso";
+                Escribir "o para volver al menú de usuarios presiona el 1";
+                Leer b;
+            FinSi
+        Hasta Que b = 1
+    FinSi
+    Si a = 8 y curso8 = Verdadero Entonces
+        Escribir "Lo sentimos el señor (a) " , usuario8;
+        Escribir "No ha sido aprobado";
+    FinSi
+    Hasta Que a = 9
+    FinProceso
+        </pre>
+    </div>
+</section>
+
+<div class="video">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/-_qu8ng8axM" 
+    title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; 
+    clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
+<footer>
+    © Hecho por Carlos Valencia para
+    <a href="https://www.sofka.com.co/es/sofka-university/" target="_blank"> Sofka U </a> <br>
+    Número telefónico: 3185103136 <br>
+    Correo electrónico: caliche-9696@hotmail.com
+</footer>
+
+</body>
+</html>

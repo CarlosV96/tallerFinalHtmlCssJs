@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="css/styles.css" rel="stylesheet" />
+    <title>Taller 3</title>
+  </head>
+
+  <body>
+    <header>
+      <div id="redes">
+        <ul>
+          <li>
+            <a href="https://github.com/CarlosV96" target="_blank"
+              ><img src="descargas/github.webp" />
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://www.linkedin.com/in/carlosandresvalencia1996/"
+              target="_blank"
+              ><img src="descargas/Linkedin.png" />
+            </a>
+          </li>
+        </ul>
+      </div>
+      <p>Bienvenidos a mi portafolio</p>
+    </header>
+
+    <div id="menuPrincipal" class="centrar">
+      <a href="index.html"> VOLVER AL MENÚ PRINCIPAL.</a> <br />
+      <br />
+      <a href="semana4.html">IR A SEMANA 4</a> <br />
+      <br />
+    </div>
+
+    <article class="titulo">
+      <h1>Taller de ciclos con Java</h1>
+      <p>
+        Se presenta la clase main del taller 3, y haciendo click en cada botón
+        <br />
+        redirecciona al repositorio github donde se encuentra cada punto.
+      </p>
+    </article>
+
+    <div class="java">
+      <ol>
+        <li>
+          <button type="button">
+              <a href="https://github.com/CarlosV96/TallerJava1/blob/main/src/com/sofka/Taller3/Punto1.java" target="_blank">Punto 1</a>
+          </button>
+        </li>
+        <li>
+            <button type="button">
+                <a href="https://github.com/CarlosV96/TallerJava1/blob/main/src/com/sofka/Taller3/Punto2.java" target="_blank">Punto 2</a>
+            </button>
+        </li>
+        <li>
+            <button type="button">
+                <a href="https://github.com/CarlosV96/TallerJava1/blob/main/src/com/sofka/Taller3/Punto3.java" target="_blank">Punto 3</a>
+            </button>
+        </li>
+        <li>
+            <button type="button">
+                <a href="https://github.com/CarlosV96/TallerJava1/blob/main/src/com/sofka/Taller3/Punto4.java" target="_blank">Punto 4</a>
+            </button>
+        </li>
+        <li>
+            <button type="button">
+                <a href="https://github.com/CarlosV96/TallerJava1/blob/main/src/com/sofka/Taller3/Punto5.java" target="_blank">Punto 5</a>
+            </button>
+        </li>
+        <li>
+            <button type="button">
+                <a href="https://github.com/CarlosV96/TallerJava1/blob/main/src/com/sofka/Taller3/Punto6.java" target="_blank">Punto 6</a>
+            </button>
+        </li>
+        <li>
+            <button type="button">
+                <a href="https://github.com/CarlosV96/TallerJava1/blob/main/src/com/sofka/Taller3/Punto7.java" target="_blank">Punto 7</a>
+            </button>
+        </li>
+        <li>
+            <button type="button">
+                <a href="https://github.com/CarlosV96/TallerJava1/blob/main/src/com/sofka/Taller3/Punto8.java" target="_blank">Punto 8</a>
+            </button>
+        </li>
+        
+      </ol>
+    </div>
+
+    <section>
+      <div class="puntos">
+        <h2>Main Taller 3</h2>
+        <br />
+        <br />
+        <pre>
+            package com.sofka.Taller3;
+            import java.io.IOException;
+            import java.util.Scanner;
+            
+            import com.sofka.Linea;
+            
+            public class Main3 {
+            
+                private static boolean bandera = true;
+                private static int opcion;
+                private static Scanner input;
+            
+                public static void main3(String[] args) throws IOException {
+                    input = new Scanner(System.in);
+                    Linea l = new Linea();
+                    
+                    do {
+                        menu();
+                        opcion = capturarOpcion();
+                        bandera = evaluarOpcion(opcion);
+                    } while (bandera == true);
+                    l.Linea();
+                }
+            
+                private static void menu() {
+                    System.out.println("Escoja un punto del Taller 3");
+                    System.out.println("1. Punto #1");
+                    System.out.println("2. Punto #2");
+                    System.out.println("3. Punto #3");
+                    System.out.println("4. Punto #4");
+                    System.out.println("5. Punto #5");
+                    System.out.println("6. Punto #6");
+                    System.out.println("7. Punto #7");
+                    System.out.println("8. Punto #8");
+                    System.out.println("0. Salir del taller");
+                }
+            
+                private static int capturarOpcion() {
+                    int resultado = input.nextInt();
+                    input.nextLine(); 
+                    return resultado;
+            //      return Integer.parseInt(input.nextLine());
+                }
+            
+                private static boolean evaluarOpcion(int opcion) throws IOException {
+                    switch (opcion) {
+                        case 1:
+                            Punto1 p1 = new Punto1();
+                            p1.Punto1();
+                            return true;
+                   
+                        case 2:
+                            Punto2 p2 = new Punto2();
+                            p2.Punto2();
+                            return true;
+                            
+                        case 3:
+                            Punto3 p3 = new Punto3();
+                            p3.Punto3();
+                            return true;
+                            
+                        case 4:
+                            Punto4 p4 = new Punto4();
+                            p4.Punto4();
+                            return true;
+                            
+                        case 5:
+                            Punto5 p5 = new Punto5();
+                            p5.Punto5();
+                            return true;
+                        
+                        case 6:
+                            Punto6 p6 = new Punto6();
+                            p6.Punto6();
+                            return true;
+                            
+                        case 7:
+                            Punto7 p7 = new Punto7();
+                            p7.Punto7();
+                            return true;
+                            
+                        case 8:
+                            Punto8 p8 = new Punto8();
+                            p8.Punto8();
+                            return true;
+                    
+                        case 0:
+                            return false;
+                       
+                        default:
+                            System.out.println("Opción incorrecta.");
+                            System.in.read();
+                    }
+                    return true;
+                }
+            }
+        </pre>
+      </div>
+    </section>
+
+    <footer>
+      © Hecho por Carlos Valencia para
+      <a href="https://www.sofka.com.co/es/sofka-university/" target="_blank"> Sofka U </a> <br>
+      Número telefónico: 3185103136 <br>
+      Correo electrónico: caliche-9696@hotmail.com
+  </footer>
+  
+  </body>
+</html>
